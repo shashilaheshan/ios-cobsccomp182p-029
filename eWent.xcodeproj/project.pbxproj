@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F62C36923EC906900A6AC19 /* AssetsFiles.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */; };
+		0F62C36E23EC9C1800A6AC19 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */; };
 		0F71EDD023EC77E0007B450A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDCF23EC77E0007B450A /* AppDelegate.swift */; };
 		0F71EDD223EC77E0007B450A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDD123EC77E0007B450A /* ViewController.swift */; };
 		0F71EDD523EC77E0007B450A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F71EDD323EC77E0007B450A /* Main.storyboard */; };
 		0F71EDD823EC77E0007B450A /* eWent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDD623EC77E0007B450A /* eWent.xcdatamodeld */; };
-		0F71EDDA23EC77E2007B450A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F71EDD923EC77E2007B450A /* Assets.xcassets */; };
 		0F71EDDD23EC77E2007B450A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F71EDDB23EC77E2007B450A /* LaunchScreen.storyboard */; };
 		0F71EDE823EC77E2007B450A /* eWentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDE723EC77E2007B450A /* eWentTests.swift */; };
 		0F71EDF323EC77E2007B450A /* eWentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDF223EC77E2007B450A /* eWentUITests.swift */; };
@@ -35,12 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = AssetsFiles.xcassets; path = eWent/AssetsFiles.xcassets; sourceTree = SOURCE_ROOT; };
+		0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		0F71EDCC23EC77E0007B450A /* eWent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F71EDCF23EC77E0007B450A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F71EDD123EC77E0007B450A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F71EDD423EC77E0007B450A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F71EDD723EC77E0007B450A /* eWent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eWent.xcdatamodel; sourceTree = "<group>"; };
-		0F71EDD923EC77E2007B450A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F71EDDC23EC77E2007B450A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F71EDDE23EC77E2007B450A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F71EDE323EC77E2007B450A /* eWentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eWentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F62C36A23EC998700A6AC19 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0F71EDD323EC77E0007B450A /* Main.storyboard */,
+				0F71EDDB23EC77E2007B450A /* LaunchScreen.storyboard */,
+				0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		0F71EDC323EC77E0007B450A = {
 			isa = PBXGroup;
 			children = (
@@ -99,11 +111,10 @@
 		0F71EDCE23EC77E0007B450A /* eWent */ = {
 			isa = PBXGroup;
 			children = (
+				0F62C36A23EC998700A6AC19 /* Storyboards */,
+				0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */,
 				0F71EDCF23EC77E0007B450A /* AppDelegate.swift */,
 				0F71EDD123EC77E0007B450A /* ViewController.swift */,
-				0F71EDD323EC77E0007B450A /* Main.storyboard */,
-				0F71EDD923EC77E2007B450A /* Assets.xcassets */,
-				0F71EDDB23EC77E2007B450A /* LaunchScreen.storyboard */,
 				0F71EDDE23EC77E2007B450A /* Info.plist */,
 				0F71EDD623EC77E0007B450A /* eWent.xcdatamodeld */,
 			);
@@ -232,8 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F62C36E23EC9C1800A6AC19 /* Auth.storyboard in Resources */,
 				0F71EDDD23EC77E2007B450A /* LaunchScreen.storyboard in Resources */,
-				0F71EDDA23EC77E2007B450A /* Assets.xcassets in Resources */,
+				0F62C36923EC906900A6AC19 /* AssetsFiles.xcassets in Resources */,
 				0F71EDD523EC77E0007B450A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG2AF9T859;
 				INFOPLIST_FILE = eWent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG2AF9T859;
 				INFOPLIST_FILE = eWent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
