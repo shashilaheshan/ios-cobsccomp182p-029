@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import eWent
+@testable import shashilaheshanCOBSCCOMP182P029eWent
 
 class eWentTests: XCTestCase {
 

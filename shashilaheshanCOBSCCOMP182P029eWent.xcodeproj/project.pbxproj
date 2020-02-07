@@ -16,13 +16,13 @@
 		0F62C38123ED370600A6AC19 /* UtilsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C38023ED370600A6AC19 /* UtilsApp.swift */; };
 		0F62C38423ED482000A6AC19 /* GetSliderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C38323ED482000A6AC19 /* GetSliderInfo.swift */; };
 		0F62C38723ED4C0F00A6AC19 /* SliderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C38623ED4C0F00A6AC19 /* SliderDataService.swift */; };
-		0F71EDD023EC77E0007B450A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDCF23EC77E0007B450A /* AppDelegate.swift */; };
 		0F71EDD223EC77E0007B450A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDD123EC77E0007B450A /* ViewController.swift */; };
 		0F71EDD523EC77E0007B450A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F71EDD323EC77E0007B450A /* Main.storyboard */; };
 		0F71EDD823EC77E0007B450A /* eWent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDD623EC77E0007B450A /* eWent.xcdatamodeld */; };
 		0F71EDDD23EC77E2007B450A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F71EDDB23EC77E2007B450A /* LaunchScreen.storyboard */; };
-		0F71EDE823EC77E2007B450A /* eWentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDE723EC77E2007B450A /* eWentTests.swift */; };
-		0F71EDF323EC77E2007B450A /* eWentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDF223EC77E2007B450A /* eWentUITests.swift */; };
+		0F9D705B23EDC46A005722DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDCF23EC77E0007B450A /* AppDelegate.swift */; };
+		0F9D705C23EDC46D005722DF /* eWentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDE723EC77E2007B450A /* eWentTests.swift */; };
+		0F9D705D23EDC470005722DF /* eWentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDF223EC77E2007B450A /* eWentUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = AssetsFiles.xcassets; path = eWent/AssetsFiles.xcassets; sourceTree = SOURCE_ROOT; };
+		0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = AssetsFiles.xcassets; path = shashilaheshanCOBSCCOMP182P029eWent/AssetsFiles.xcassets; sourceTree = SOURCE_ROOT; };
 		0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		0F62C37423ED1C6B00A6AC19 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		0F62C37623ED1DB100A6AC19 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
@@ -52,17 +52,17 @@
 		0F62C38023ED370600A6AC19 /* UtilsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsApp.swift; sourceTree = "<group>"; };
 		0F62C38323ED482000A6AC19 /* GetSliderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSliderInfo.swift; sourceTree = "<group>"; };
 		0F62C38623ED4C0F00A6AC19 /* SliderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderDataService.swift; sourceTree = "<group>"; };
-		0F71EDCC23EC77E0007B450A /* eWent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F71EDCC23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shashilaheshanCOBSCCOMP182P029eWent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F71EDCF23EC77E0007B450A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F71EDD123EC77E0007B450A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F71EDD423EC77E0007B450A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F71EDD723EC77E0007B450A /* eWent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eWent.xcdatamodel; sourceTree = "<group>"; };
 		0F71EDDC23EC77E2007B450A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F71EDDE23EC77E2007B450A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F71EDE323EC77E2007B450A /* eWentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eWentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F71EDE323EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shashilaheshanCOBSCCOMP182P029eWentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F71EDE723EC77E2007B450A /* eWentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eWentTests.swift; sourceTree = "<group>"; };
 		0F71EDE923EC77E2007B450A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F71EDEE23EC77E2007B450A /* eWentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eWentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F71EDEE23EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shashilaheshanCOBSCCOMP182P029eWentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F71EDF223EC77E2007B450A /* eWentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eWentUITests.swift; sourceTree = "<group>"; };
 		0F71EDF423EC77E2007B450A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,9 +163,9 @@
 		0F71EDC323EC77E0007B450A = {
 			isa = PBXGroup;
 			children = (
-				0F71EDCE23EC77E0007B450A /* eWent */,
-				0F71EDE623EC77E2007B450A /* eWentTests */,
-				0F71EDF123EC77E2007B450A /* eWentUITests */,
+				0F71EDCE23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent */,
+				0F71EDE623EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentTests */,
+				0F71EDF123EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentUITests */,
 				0F71EDCD23EC77E0007B450A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -173,14 +173,14 @@
 		0F71EDCD23EC77E0007B450A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0F71EDCC23EC77E0007B450A /* eWent.app */,
-				0F71EDE323EC77E2007B450A /* eWentTests.xctest */,
-				0F71EDEE23EC77E2007B450A /* eWentUITests.xctest */,
+				0F71EDCC23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent.app */,
+				0F71EDE323EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentTests.xctest */,
+				0F71EDEE23EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0F71EDCE23EC77E0007B450A /* eWent */ = {
+		0F71EDCE23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent */ = {
 			isa = PBXGroup;
 			children = (
 				0F62C38523ED4C0200A6AC19 /* Services */,
@@ -195,33 +195,33 @@
 				0F71EDDE23EC77E2007B450A /* Info.plist */,
 				0F71EDD623EC77E0007B450A /* eWent.xcdatamodeld */,
 			);
-			path = eWent;
+			path = shashilaheshanCOBSCCOMP182P029eWent;
 			sourceTree = "<group>";
 		};
-		0F71EDE623EC77E2007B450A /* eWentTests */ = {
+		0F71EDE623EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentTests */ = {
 			isa = PBXGroup;
 			children = (
 				0F71EDE723EC77E2007B450A /* eWentTests.swift */,
 				0F71EDE923EC77E2007B450A /* Info.plist */,
 			);
-			path = eWentTests;
+			path = shashilaheshanCOBSCCOMP182P029eWentTests;
 			sourceTree = "<group>";
 		};
-		0F71EDF123EC77E2007B450A /* eWentUITests */ = {
+		0F71EDF123EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentUITests */ = {
 			isa = PBXGroup;
 			children = (
 				0F71EDF223EC77E2007B450A /* eWentUITests.swift */,
 				0F71EDF423EC77E2007B450A /* Info.plist */,
 			);
-			path = eWentUITests;
+			path = shashilaheshanCOBSCCOMP182P029eWentUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0F71EDCB23EC77E0007B450A /* eWent */ = {
+		0F71EDCB23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F71EDF723EC77E2007B450A /* Build configuration list for PBXNativeTarget "eWent" */;
+			buildConfigurationList = 0F71EDF723EC77E2007B450A /* Build configuration list for PBXNativeTarget "shashilaheshanCOBSCCOMP182P029eWent" */;
 			buildPhases = (
 				0F71EDC823EC77E0007B450A /* Sources */,
 				0F71EDC923EC77E0007B450A /* Frameworks */,
@@ -231,14 +231,14 @@
 			);
 			dependencies = (
 			);
-			name = eWent;
+			name = shashilaheshanCOBSCCOMP182P029eWent;
 			productName = eWent;
-			productReference = 0F71EDCC23EC77E0007B450A /* eWent.app */;
+			productReference = 0F71EDCC23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0F71EDE223EC77E2007B450A /* eWentTests */ = {
+		0F71EDE223EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F71EDFA23EC77E2007B450A /* Build configuration list for PBXNativeTarget "eWentTests" */;
+			buildConfigurationList = 0F71EDFA23EC77E2007B450A /* Build configuration list for PBXNativeTarget "shashilaheshanCOBSCCOMP182P029eWentTests" */;
 			buildPhases = (
 				0F71EDDF23EC77E2007B450A /* Sources */,
 				0F71EDE023EC77E2007B450A /* Frameworks */,
@@ -249,14 +249,14 @@
 			dependencies = (
 				0F71EDE523EC77E2007B450A /* PBXTargetDependency */,
 			);
-			name = eWentTests;
+			name = shashilaheshanCOBSCCOMP182P029eWentTests;
 			productName = eWentTests;
-			productReference = 0F71EDE323EC77E2007B450A /* eWentTests.xctest */;
+			productReference = 0F71EDE323EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0F71EDED23EC77E2007B450A /* eWentUITests */ = {
+		0F71EDED23EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F71EDFD23EC77E2007B450A /* Build configuration list for PBXNativeTarget "eWentUITests" */;
+			buildConfigurationList = 0F71EDFD23EC77E2007B450A /* Build configuration list for PBXNativeTarget "shashilaheshanCOBSCCOMP182P029eWentUITests" */;
 			buildPhases = (
 				0F71EDEA23EC77E2007B450A /* Sources */,
 				0F71EDEB23EC77E2007B450A /* Frameworks */,
@@ -267,9 +267,9 @@
 			dependencies = (
 				0F71EDF023EC77E2007B450A /* PBXTargetDependency */,
 			);
-			name = eWentUITests;
+			name = shashilaheshanCOBSCCOMP182P029eWentUITests;
 			productName = eWentUITests;
-			productReference = 0F71EDEE23EC77E2007B450A /* eWentUITests.xctest */;
+			productReference = 0F71EDEE23EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -295,7 +295,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0F71EDC723EC77E0007B450A /* Build configuration list for PBXProject "eWent" */;
+			buildConfigurationList = 0F71EDC723EC77E0007B450A /* Build configuration list for PBXProject "shashilaheshanCOBSCCOMP182P029eWent" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -308,9 +308,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0F71EDCB23EC77E0007B450A /* eWent */,
-				0F71EDE223EC77E2007B450A /* eWentTests */,
-				0F71EDED23EC77E2007B450A /* eWentUITests */,
+				0F71EDCB23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent */,
+				0F71EDE223EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentTests */,
+				0F71EDED23EC77E2007B450A /* shashilaheshanCOBSCCOMP182P029eWentUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -350,9 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F71EDD223EC77E0007B450A /* ViewController.swift in Sources */,
-				0F71EDD023EC77E0007B450A /* AppDelegate.swift in Sources */,
 				0F71EDD823EC77E0007B450A /* eWent.xcdatamodeld in Sources */,
 				0F62C38123ED370600A6AC19 /* UtilsApp.swift in Sources */,
+				0F9D705B23EDC46A005722DF /* AppDelegate.swift in Sources */,
 				0F62C37523ED1C6B00A6AC19 /* Slide.swift in Sources */,
 				0F62C38423ED482000A6AC19 /* GetSliderInfo.swift in Sources */,
 				0F62C37E23ED350400A6AC19 /* NonTransitionNavigator.swift in Sources */,
@@ -365,7 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F71EDE823EC77E2007B450A /* eWentTests.swift in Sources */,
+				0F9D705C23EDC46D005722DF /* eWentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F71EDF323EC77E2007B450A /* eWentUITests.swift in Sources */,
+				0F9D705D23EDC470005722DF /* eWentUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,12 +382,12 @@
 /* Begin PBXTargetDependency section */
 		0F71EDE523EC77E2007B450A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0F71EDCB23EC77E0007B450A /* eWent */;
+			target = 0F71EDCB23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent */;
 			targetProxy = 0F71EDE423EC77E2007B450A /* PBXContainerItemProxy */;
 		};
 		0F71EDF023EC77E2007B450A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0F71EDCB23EC77E0007B450A /* eWent */;
+			target = 0F71EDCB23EC77E0007B450A /* shashilaheshanCOBSCCOMP182P029eWent */;
 			targetProxy = 0F71EDEF23EC77E2007B450A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -463,6 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "shashila-heshan-COBSCCOMP182P029-eWent/info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -518,6 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "shashila-heshan-COBSCCOMP182P029-eWent/info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -534,7 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG2AF9T859;
-				INFOPLIST_FILE = eWent/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/shashilaheshanCOBSCCOMP182P029eWent/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG2AF9T859;
-				INFOPLIST_FILE = eWent/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/shashilaheshanCOBSCCOMP182P029eWent/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -573,7 +575,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG2AF9T859;
-				INFOPLIST_FILE = eWentTests/Info.plist;
+				INFOPLIST_FILE = shashilaheshanCOBSCCOMP182P029eWentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,7 +585,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eWent.app/eWent";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/shashilaheshanCOBSCCOMP182P029eWent.app/shashilaheshanCOBSCCOMP182P029eWent";
 			};
 			name = Debug;
 		};
@@ -594,7 +596,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG2AF9T859;
-				INFOPLIST_FILE = eWentTests/Info.plist;
+				INFOPLIST_FILE = shashilaheshanCOBSCCOMP182P029eWentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,7 +606,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eWent.app/eWent";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/shashilaheshanCOBSCCOMP182P029eWent.app/shashilaheshanCOBSCCOMP182P029eWent";
 			};
 			name = Release;
 		};
@@ -614,7 +616,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG2AF9T859;
-				INFOPLIST_FILE = eWentUITests/Info.plist;
+				INFOPLIST_FILE = shashilaheshanCOBSCCOMP182P029eWentUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,7 +626,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = eWent;
+				TEST_TARGET_NAME = shashilaheshanCOBSCCOMP182P029eWent;
 			};
 			name = Debug;
 		};
@@ -634,7 +636,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG2AF9T859;
-				INFOPLIST_FILE = eWentUITests/Info.plist;
+				INFOPLIST_FILE = shashilaheshanCOBSCCOMP182P029eWentUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -644,14 +646,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = eWent;
+				TEST_TARGET_NAME = shashilaheshanCOBSCCOMP182P029eWent;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0F71EDC723EC77E0007B450A /* Build configuration list for PBXProject "eWent" */ = {
+		0F71EDC723EC77E0007B450A /* Build configuration list for PBXProject "shashilaheshanCOBSCCOMP182P029eWent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F71EDF523EC77E2007B450A /* Debug */,
@@ -660,7 +662,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F71EDF723EC77E2007B450A /* Build configuration list for PBXNativeTarget "eWent" */ = {
+		0F71EDF723EC77E2007B450A /* Build configuration list for PBXNativeTarget "shashilaheshanCOBSCCOMP182P029eWent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F71EDF823EC77E2007B450A /* Debug */,
@@ -669,7 +671,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F71EDFA23EC77E2007B450A /* Build configuration list for PBXNativeTarget "eWentTests" */ = {
+		0F71EDFA23EC77E2007B450A /* Build configuration list for PBXNativeTarget "shashilaheshanCOBSCCOMP182P029eWentTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F71EDFB23EC77E2007B450A /* Debug */,
@@ -678,7 +680,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F71EDFD23EC77E2007B450A /* Build configuration list for PBXNativeTarget "eWentUITests" */ = {
+		0F71EDFD23EC77E2007B450A /* Build configuration list for PBXNativeTarget "shashilaheshanCOBSCCOMP182P029eWentUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F71EDFE23EC77E2007B450A /* Debug */,
