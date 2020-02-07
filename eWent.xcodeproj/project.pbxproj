@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		0F62C36923EC906900A6AC19 /* AssetsFiles.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */; };
 		0F62C36E23EC9C1800A6AC19 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */; };
+		0F62C37523ED1C6B00A6AC19 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C37423ED1C6B00A6AC19 /* Slide.swift */; };
+		0F62C37723ED1DB100A6AC19 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F62C37623ED1DB100A6AC19 /* Slide.xib */; };
+		0F62C37B23ED31D800A6AC19 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C37A23ED31D800A6AC19 /* LoginVC.swift */; };
+		0F62C37E23ED350400A6AC19 /* NonTransitionNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C37D23ED350400A6AC19 /* NonTransitionNavigator.swift */; };
+		0F62C38123ED370600A6AC19 /* UtilsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C38023ED370600A6AC19 /* UtilsApp.swift */; };
+		0F62C38423ED482000A6AC19 /* GetSliderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C38323ED482000A6AC19 /* GetSliderInfo.swift */; };
+		0F62C38723ED4C0F00A6AC19 /* SliderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C38623ED4C0F00A6AC19 /* SliderDataService.swift */; };
 		0F71EDD023EC77E0007B450A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDCF23EC77E0007B450A /* AppDelegate.swift */; };
 		0F71EDD223EC77E0007B450A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDD123EC77E0007B450A /* ViewController.swift */; };
 		0F71EDD523EC77E0007B450A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F71EDD323EC77E0007B450A /* Main.storyboard */; };
@@ -38,6 +45,13 @@
 /* Begin PBXFileReference section */
 		0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = AssetsFiles.xcassets; path = eWent/AssetsFiles.xcassets; sourceTree = SOURCE_ROOT; };
 		0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		0F62C37423ED1C6B00A6AC19 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		0F62C37623ED1DB100A6AC19 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		0F62C37A23ED31D800A6AC19 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0F62C37D23ED350400A6AC19 /* NonTransitionNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonTransitionNavigator.swift; sourceTree = "<group>"; };
+		0F62C38023ED370600A6AC19 /* UtilsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsApp.swift; sourceTree = "<group>"; };
+		0F62C38323ED482000A6AC19 /* GetSliderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSliderInfo.swift; sourceTree = "<group>"; };
+		0F62C38623ED4C0F00A6AC19 /* SliderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderDataService.swift; sourceTree = "<group>"; };
 		0F71EDCC23EC77E0007B450A /* eWent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F71EDCF23EC77E0007B450A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F71EDD123EC77E0007B450A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +102,64 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		0F62C37323ED1C5800A6AC19 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				0F62C37423ED1C6B00A6AC19 /* Slide.swift */,
+				0F62C37623ED1DB100A6AC19 /* Slide.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		0F62C37823ED318E00A6AC19 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F62C37923ED31C500A6AC19 /* LoginVC */,
+				0F71EDD123EC77E0007B450A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0F62C37923ED31C500A6AC19 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				0F62C37A23ED31D800A6AC19 /* LoginVC.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		0F62C37C23ED34E100A6AC19 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0F62C37D23ED350400A6AC19 /* NonTransitionNavigator.swift */,
+				0F62C38323ED482000A6AC19 /* GetSliderInfo.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0F62C37F23ED36F100A6AC19 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0F62C38023ED370600A6AC19 /* UtilsApp.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0F62C38223ED3BBC00A6AC19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F62C38523ED4C0200A6AC19 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0F62C38623ED4C0F00A6AC19 /* SliderDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		0F71EDC323EC77E0007B450A = {
 			isa = PBXGroup;
 			children = (
@@ -111,10 +183,15 @@
 		0F71EDCE23EC77E0007B450A /* eWent */ = {
 			isa = PBXGroup;
 			children = (
+				0F62C38523ED4C0200A6AC19 /* Services */,
+				0F62C38223ED3BBC00A6AC19 /* Models */,
+				0F62C37F23ED36F100A6AC19 /* Utils */,
+				0F62C37C23ED34E100A6AC19 /* Helpers */,
+				0F62C37823ED318E00A6AC19 /* ViewControllers */,
+				0F62C37323ED1C5800A6AC19 /* CustomViews */,
 				0F62C36A23EC998700A6AC19 /* Storyboards */,
 				0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */,
 				0F71EDCF23EC77E0007B450A /* AppDelegate.swift */,
-				0F71EDD123EC77E0007B450A /* ViewController.swift */,
 				0F71EDDE23EC77E2007B450A /* Info.plist */,
 				0F71EDD623EC77E0007B450A /* eWent.xcdatamodeld */,
 			);
@@ -246,6 +323,7 @@
 				0F62C36E23EC9C1800A6AC19 /* Auth.storyboard in Resources */,
 				0F71EDDD23EC77E2007B450A /* LaunchScreen.storyboard in Resources */,
 				0F62C36923EC906900A6AC19 /* AssetsFiles.xcassets in Resources */,
+				0F62C37723ED1DB100A6AC19 /* Slide.xib in Resources */,
 				0F71EDD523EC77E0007B450A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +352,12 @@
 				0F71EDD223EC77E0007B450A /* ViewController.swift in Sources */,
 				0F71EDD023EC77E0007B450A /* AppDelegate.swift in Sources */,
 				0F71EDD823EC77E0007B450A /* eWent.xcdatamodeld in Sources */,
+				0F62C38123ED370600A6AC19 /* UtilsApp.swift in Sources */,
+				0F62C37523ED1C6B00A6AC19 /* Slide.swift in Sources */,
+				0F62C38423ED482000A6AC19 /* GetSliderInfo.swift in Sources */,
+				0F62C37E23ED350400A6AC19 /* NonTransitionNavigator.swift in Sources */,
+				0F62C38723ED4C0F00A6AC19 /* SliderDataService.swift in Sources */,
+				0F62C37B23ED31D800A6AC19 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

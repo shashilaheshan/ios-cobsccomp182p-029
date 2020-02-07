@@ -18,32 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-xh-WYa">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="CF0-L2-2oq" kind="show" id="ARx-ia-aBV"/>
-                                </connections>
-                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="w6u-u7-XJW">
+                                <rect key="frame" x="50" y="815" width="314" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.25279489529999999" green="0.61256528870000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.37921381300000001" green="0.8161774289" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iP7-zV-hch">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CNF-xh-WYa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L01-HB-qn6"/>
-                            <constraint firstItem="CNF-xh-WYa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UYe-hN-tPt"/>
+                            <constraint firstItem="iP7-zV-hch" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8S1-Gy-m51"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w6u-u7-XJW" secondAttribute="bottom" constant="10" id="MNY-7s-U0A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iP7-zV-hch" secondAttribute="trailing" id="OSt-MP-W5n"/>
+                            <constraint firstItem="w6u-u7-XJW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Xyo-it-6Ap"/>
+                            <constraint firstItem="iP7-zV-hch" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YEh-xh-dJK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iP7-zV-hch" secondAttribute="bottom" id="cPG-OF-UNM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w6u-u7-XJW" secondAttribute="trailing" constant="50" id="mzu-L8-2g3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="w6u-u7-XJW" id="cFV-ar-bID"/>
+                        <outlet property="scollView" destination="iP7-zV-hch" id="UTA-EP-R9G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-        </scene>
-        <!--SignUpVC-->
-        <scene sceneID="f7y-E4-n5Y">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Auth" referencedIdentifier="SignUpVC" id="CF0-L2-2oq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PHf-AN-V0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="701" y="-29"/>
         </scene>
     </scenes>
 </document>
