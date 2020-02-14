@@ -41,33 +41,6 @@ class GetSliderInfo {
             
         }
         
-        //        let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        //        slide1.imageView.image = UIImage(named: "ic_onboarding_1")
-        //        slide1.txtTitle.text = "A real-life bear"
-        //        slide1.txtDescription.text = "Did you know that Winnie the chubby little cubby was based on a real, young bear in London"
-        //
-        //        let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        //        slide2.imageView.image = UIImage(named: "ic_onboarding_2")
-        //        slide2.txtTitle.text = "A real-life bear"
-        //        slide2.txtDescription.text = "Did you know that Winnie the chubby little cubby was based on a real, young bear in London"
-        //
-        //        let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        //        slide3.imageView.image = UIImage(named: "ic_onboarding_3")
-        //        slide3.txtTitle.text = "A real-life bear"
-        //        slide3.txtDescription.text = "Did you know that Winnie the chubby little cubby was based on a real, young bear in London"
-        //
-        //        let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        //        slide4.imageView.image = UIImage(named: "ic_onboarding_4")
-        //        slide4.txtTitle.text = "A real-life bear"
-        //        slide4.txtDescription.text = "Did you know that Winnie the chubby little cubby was based on a real, young bear in London"
-        //
-        //
-        //        let slide5:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        //        slide5.imageView.image = UIImage(named: "ic_onboarding_5")
-        //        slide5.txtTitle.text = "A real-life bear"
-        //        slide5.txtDescription.text = "Did you know that Winnie the chubby little cubby was based on a real, young bear in London"
-        //        slide5.btnAval = true
-        
         return slides
     }
     

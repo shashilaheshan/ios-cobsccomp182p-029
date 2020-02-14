@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import Lottie
+import UIKit
+public class AnimationController {
+    
+    static  func playAnimation(aV : AnimationView , name : String ){
+        aV.animation = Animation.named(name)
+        aV.loopMode = .loop
+        aV.play()
+    }
+}

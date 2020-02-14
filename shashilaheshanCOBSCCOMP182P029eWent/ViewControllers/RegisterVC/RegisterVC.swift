@@ -7,24 +7,19 @@
 //
 
 import UIKit
-
+import Lottie
 class RegisterVC: UIViewController {
 
+    @IBOutlet weak var registerView: AnimationView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        AnimationController.playAnimation(aV: registerView, name: "9710-registration-of-animated-illustrations")
+       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnDismiss(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
-    */
+    
 
 }
