@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F118D8F23FA5456000D1DB8 /* AssetsFiles.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F118D8E23FA5456000D1DB8 /* AssetsFiles.xcassets */; };
+		0F118D9123FA5662000D1DB8 /* EditEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F118D9023FA5662000D1DB8 /* EditEvent.storyboard */; };
+		0F118D9423FA56C3000D1DB8 /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F118D9323FA56C3000D1DB8 /* EditEventViewController.swift */; };
 		0F19338223EEFFB2006ABFC3 /* DidactGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F19338123EEFF72006ABFC3 /* DidactGothic-Regular.ttf */; };
 		0F19338323EEFFB5006ABFC3 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F19338023EEFF4F006ABFC3 /* ABeeZee-Regular.ttf */; };
 		0F19338623EF04F7006ABFC3 /* 15230-illustration-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F19338523EF04F7006ABFC3 /* 15230-illustration-animation.json */; };
@@ -23,7 +26,6 @@
 		0F51717923F5C1B800FC9071 /* GuestureTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F51717823F5C1B800FC9071 /* GuestureTabBar.swift */; };
 		0F51717B23F5C7FF00FC9071 /* EventPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F51717A23F5C7FF00FC9071 /* EventPostViewController.swift */; };
 		0F51717D23F5CAD800FC9071 /* CustomEventPostCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F51717C23F5CAD800FC9071 /* CustomEventPostCellTableViewCell.swift */; };
-		0F62C36923EC906900A6AC19 /* AssetsFiles.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */; };
 		0F62C36E23EC9C1800A6AC19 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */; };
 		0F62C37523ED1C6B00A6AC19 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62C37423ED1C6B00A6AC19 /* Slide.swift */; };
 		0F62C37723ED1DB100A6AC19 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F62C37623ED1DB100A6AC19 /* Slide.xib */; };
@@ -37,6 +39,22 @@
 		0F71EDD823EC77E0007B450A /* eWent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EDD623EC77E0007B450A /* eWent.xcdatamodeld */; };
 		0F71EDDD23EC77E2007B450A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F71EDDB23EC77E2007B450A /* LaunchScreen.storyboard */; };
 		0F896F2F23F6789800A57776 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F896F2E23F6789800A57776 /* GoogleService-Info.plist */; };
+		0F896F3123F682EC00A57776 /* Profile+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F3023F682EC00A57776 /* Profile+ViewModel.swift */; };
+		0F896F3323F6831B00A57776 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F3223F6831B00A57776 /* Profile.swift */; };
+		0F896F3523F683F700A57776 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F3423F683F700A57776 /* ProfileViewController.swift */; };
+		0F896F3923F6875B00A57776 /* FirebaseDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F3823F6875B00A57776 /* FirebaseDataClient.swift */; };
+		0F896F3B23F687EB00A57776 /* ProfileDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F3A23F687EB00A57776 /* ProfileDataService.swift */; };
+		0F896F3D23F915B800A57776 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F896F3C23F915B800A57776 /* AddEvent.storyboard */; };
+		0F896F4023F9185500A57776 /* EventAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F3F23F9185500A57776 /* EventAddViewController.swift */; };
+		0F896F4223F91D1800A57776 /* Event+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F4123F91D1800A57776 /* Event+ViewModel.swift */; };
+		0F896F4423F91D2A00A57776 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F4323F91D2A00A57776 /* Event.swift */; };
+		0F896F4623F91E9C00A57776 /* EventDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F4523F91E9C00A57776 /* EventDataService.swift */; };
+		0F896F4823F9292A00A57776 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F4723F9292A00A57776 /* AlertDialog.swift */; };
+		0F896F4A23F9847400A57776 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F4923F9847400A57776 /* User.swift */; };
+		0F896F4C23F9850200A57776 /* Register+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F4B23F9850200A57776 /* Register+ViewModel.swift */; };
+		0F896F4E23F9857D00A57776 /* AuthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F4D23F9857D00A57776 /* AuthDataService.swift */; };
+		0F896F5023F991AA00A57776 /* Login+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F4F23F991AA00A57776 /* Login+ViewModel.swift */; };
+		0F896F5223FA437600A57776 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F896F5123FA437600A57776 /* SettingsViewController.swift */; };
 		0F8D039523F3E61800322010 /* 1397-animation-for-monobank.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D039423F3E61800322010 /* 1397-animation-for-monobank.json */; };
 		0F8D039823F3E65400322010 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D039723F3E65400322010 /* ForgotPasswordVC.swift */; };
 		0F8D039A23F3EC1700322010 /* 433-checked-done.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D039923F3EC1700322010 /* 433-checked-done.json */; };
@@ -69,6 +87,9 @@
 
 /* Begin PBXFileReference section */
 		064987E07D60B0A14C1EF259 /* Pods-shashilaheshanCOBSCCOMP182P029eWentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shashilaheshanCOBSCCOMP182P029eWentTests.debug.xcconfig"; path = "Target Support Files/Pods-shashilaheshanCOBSCCOMP182P029eWentTests/Pods-shashilaheshanCOBSCCOMP182P029eWentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F118D8E23FA5456000D1DB8 /* AssetsFiles.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsFiles.xcassets; sourceTree = "<group>"; };
+		0F118D9023FA5662000D1DB8 /* EditEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEvent.storyboard; sourceTree = "<group>"; };
+		0F118D9323FA56C3000D1DB8 /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		0F19338023EEFF4F006ABFC3 /* ABeeZee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABeeZee-Regular.ttf"; sourceTree = "<group>"; };
 		0F19338123EEFF72006ABFC3 /* DidactGothic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DidactGothic-Regular.ttf"; sourceTree = "<group>"; };
 		0F19338523EF04F7006ABFC3 /* 15230-illustration-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "15230-illustration-animation.json"; sourceTree = "<group>"; };
@@ -85,7 +106,6 @@
 		0F51717823F5C1B800FC9071 /* GuestureTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestureTabBar.swift; sourceTree = "<group>"; };
 		0F51717A23F5C7FF00FC9071 /* EventPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPostViewController.swift; sourceTree = "<group>"; };
 		0F51717C23F5CAD800FC9071 /* CustomEventPostCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEventPostCellTableViewCell.swift; sourceTree = "<group>"; };
-		0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = AssetsFiles.xcassets; path = shashilaheshanCOBSCCOMP182P029eWent/AssetsFiles.xcassets; sourceTree = SOURCE_ROOT; };
 		0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		0F62C37423ED1C6B00A6AC19 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		0F62C37623ED1DB100A6AC19 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
@@ -108,6 +128,22 @@
 		0F71EDF223EC77E2007B450A /* eWentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eWentUITests.swift; sourceTree = "<group>"; };
 		0F71EDF423EC77E2007B450A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F896F2E23F6789800A57776 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F896F3023F682EC00A57776 /* Profile+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+ViewModel.swift"; sourceTree = "<group>"; };
+		0F896F3223F6831B00A57776 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		0F896F3423F683F700A57776 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0F896F3823F6875B00A57776 /* FirebaseDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataClient.swift; sourceTree = "<group>"; };
+		0F896F3A23F687EB00A57776 /* ProfileDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataService.swift; sourceTree = "<group>"; };
+		0F896F3C23F915B800A57776 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
+		0F896F3F23F9185500A57776 /* EventAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddViewController.swift; sourceTree = "<group>"; };
+		0F896F4123F91D1800A57776 /* Event+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+ViewModel.swift"; sourceTree = "<group>"; };
+		0F896F4323F91D2A00A57776 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0F896F4523F91E9C00A57776 /* EventDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataService.swift; sourceTree = "<group>"; };
+		0F896F4723F9292A00A57776 /* AlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialog.swift; sourceTree = "<group>"; };
+		0F896F4923F9847400A57776 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F896F4B23F9850200A57776 /* Register+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Register+ViewModel.swift"; sourceTree = "<group>"; };
+		0F896F4D23F9857D00A57776 /* AuthDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataService.swift; sourceTree = "<group>"; };
+		0F896F4F23F991AA00A57776 /* Login+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+ViewModel.swift"; sourceTree = "<group>"; };
+		0F896F5123FA437600A57776 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0F8D039423F3E61800322010 /* 1397-animation-for-monobank.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1397-animation-for-monobank.json"; sourceTree = "<group>"; };
 		0F8D039723F3E65400322010 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		0F8D039923F3EC1700322010 /* 433-checked-done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "433-checked-done.json"; sourceTree = "<group>"; };
@@ -151,6 +187,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F118D9223FA56B0000D1DB8 /* EditEventVC */ = {
+			isa = PBXGroup;
+			children = (
+				0F118D9323FA56C3000D1DB8 /* EditEventViewController.swift */,
+			);
+			path = EditEventVC;
+			sourceTree = "<group>";
+		};
 		0F19337F23EEFEDC006ABFC3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +221,7 @@
 			children = (
 				0F19338C23EF14C9006ABFC3 /* UiElementsExtentions */,
 				0F19338A23EF0D66006ABFC3 /* LoginUIExtention.swift */,
+				0F896F4723F9292A00A57776 /* AlertDialog.swift */,
 			);
 			path = UIExtentions;
 			sourceTree = "<group>";
@@ -213,6 +258,8 @@
 			children = (
 				0F51717823F5C1B800FC9071 /* GuestureTabBar.swift */,
 				0F51717A23F5C7FF00FC9071 /* EventPostViewController.swift */,
+				0F896F3423F683F700A57776 /* ProfileViewController.swift */,
+				0F896F5123FA437600A57776 /* SettingsViewController.swift */,
 			);
 			path = "UiTabBar+";
 			sourceTree = "<group>";
@@ -224,6 +271,8 @@
 				0F71EDDB23EC77E2007B450A /* LaunchScreen.storyboard */,
 				0F62C36D23EC9C1800A6AC19 /* Auth.storyboard */,
 				0F51717323F5BBD200FC9071 /* Home.storyboard */,
+				0F896F3C23F915B800A57776 /* AddEvent.storyboard */,
+				0F118D9023FA5662000D1DB8 /* EditEvent.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -241,6 +290,8 @@
 		0F62C37823ED318E00A6AC19 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F118D9223FA56B0000D1DB8 /* EditEventVC */,
+				0F896F3E23F9184400A57776 /* EventAddVC */,
 				0F51717723F5C16300FC9071 /* UiTabBar+ */,
 				0F8D039623F3E63300322010 /* ForgotPasswordVC */,
 				0F19339623EF26AE006ABFC3 /* RegisterVC */,
@@ -280,6 +331,9 @@
 		0F62C38223ED3BBC00A6AC19 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0F896F3223F6831B00A57776 /* Profile.swift */,
+				0F896F4323F91D2A00A57776 /* Event.swift */,
+				0F896F4923F9847400A57776 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,6 +342,10 @@
 			isa = PBXGroup;
 			children = (
 				0F62C38623ED4C0F00A6AC19 /* SliderDataService.swift */,
+				0F896F3823F6875B00A57776 /* FirebaseDataClient.swift */,
+				0F896F3A23F687EB00A57776 /* ProfileDataService.swift */,
+				0F896F4523F91E9C00A57776 /* EventDataService.swift */,
+				0F896F4D23F9857D00A57776 /* AuthDataService.swift */,
 			);
 			path = ServiceClients;
 			sourceTree = "<group>";
@@ -330,10 +388,10 @@
 				0F62C37823ED318E00A6AC19 /* ViewControllers */,
 				0F62C37323ED1C5800A6AC19 /* CustomViews */,
 				0F62C36A23EC998700A6AC19 /* Storyboards */,
-				0F62C36823EC906900A6AC19 /* AssetsFiles.xcassets */,
 				0F71EDCF23EC77E0007B450A /* AppDelegate.swift */,
 				0F71EDDE23EC77E2007B450A /* Info.plist */,
 				0F71EDD623EC77E0007B450A /* eWent.xcdatamodeld */,
+				0F118D8E23FA5456000D1DB8 /* AssetsFiles.xcassets */,
 			);
 			path = shashilaheshanCOBSCCOMP182P029eWent;
 			sourceTree = "<group>";
@@ -356,9 +414,21 @@
 			path = shashilaheshanCOBSCCOMP182P029eWentUITests;
 			sourceTree = "<group>";
 		};
+		0F896F3E23F9184400A57776 /* EventAddVC */ = {
+			isa = PBXGroup;
+			children = (
+				0F896F3F23F9185500A57776 /* EventAddViewController.swift */,
+			);
+			path = EventAddVC;
+			sourceTree = "<group>";
+		};
 		0F8D039323F3CFFA00322010 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0F896F3023F682EC00A57776 /* Profile+ViewModel.swift */,
+				0F896F4123F91D1800A57776 /* Event+ViewModel.swift */,
+				0F896F4B23F9850200A57776 /* Register+ViewModel.swift */,
+				0F896F4F23F991AA00A57776 /* Login+ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -503,15 +573,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F19338623EF04F7006ABFC3 /* 15230-illustration-animation.json in Resources */,
+				0F118D8F23FA5456000D1DB8 /* AssetsFiles.xcassets in Resources */,
 				0F8D039A23F3EC1700322010 /* 433-checked-done.json in Resources */,
+				0F118D9123FA5662000D1DB8 /* EditEvent.storyboard in Resources */,
 				0F51717423F5BBD200FC9071 /* Home.storyboard in Resources */,
 				0F62C36E23EC9C1800A6AC19 /* Auth.storyboard in Resources */,
 				0F71EDDD23EC77E2007B450A /* LaunchScreen.storyboard in Resources */,
-				0F62C36923EC906900A6AC19 /* AssetsFiles.xcassets in Resources */,
 				0F8D039523F3E61800322010 /* 1397-animation-for-monobank.json in Resources */,
 				0F62C37723ED1DB100A6AC19 /* Slide.xib in Resources */,
 				0F8D039C23F3EC1E00322010 /* 14651-error-animation.json in Resources */,
 				0F19339A23EF2A91006ABFC3 /* 9710-registration-of-animated-illustrations.json in Resources */,
+				0F896F3D23F915B800A57776 /* AddEvent.storyboard in Resources */,
 				0F19338223EEFFB2006ABFC3 /* DidactGothic-Regular.ttf in Resources */,
 				0F19338323EEFFB5006ABFC3 /* ABeeZee-Regular.ttf in Resources */,
 				0F71EDD523EC77E0007B450A /* Main.storyboard in Resources */,
@@ -567,15 +639,35 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-shashilaheshanCOBSCCOMP182P029eWent/Pods-shashilaheshanCOBSCCOMP182P029eWent-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ListPlaceholder/ListPlaceholder.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ListPlaceholder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/absl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -633,28 +725,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F896F5023F991AA00A57776 /* Login+ViewModel.swift in Sources */,
+				0F896F3123F682EC00A57776 /* Profile+ViewModel.swift in Sources */,
+				0F896F3323F6831B00A57776 /* Profile.swift in Sources */,
 				0F71EDD223EC77E0007B450A /* ViewController.swift in Sources */,
 				0F51717D23F5CAD800FC9071 /* CustomEventPostCellTableViewCell.swift in Sources */,
+				0F896F4423F91D2A00A57776 /* Event.swift in Sources */,
+				0F896F4623F91E9C00A57776 /* EventDataService.swift in Sources */,
 				0F71EDD823EC77E0007B450A /* eWent.xcdatamodeld in Sources */,
+				0F896F4023F9185500A57776 /* EventAddViewController.swift in Sources */,
 				0F51717B23F5C7FF00FC9071 /* EventPostViewController.swift in Sources */,
 				0F62C38123ED370600A6AC19 /* UtilsApp.swift in Sources */,
 				0F9D705B23EDC46A005722DF /* AppDelegate.swift in Sources */,
 				0F51717623F5BFEF00FC9071 /* TabBarUIViewControllerExtention.swift in Sources */,
 				0F19339523EF1ADB006ABFC3 /* UiViewExtention.swift in Sources */,
+				0F896F4E23F9857D00A57776 /* AuthDataService.swift in Sources */,
 				0F19338823EF096E006ABFC3 /* AnimationController.swift in Sources */,
 				0F8D039823F3E65400322010 /* ForgotPasswordVC.swift in Sources */,
 				0F62C37523ED1C6B00A6AC19 /* Slide.swift in Sources */,
 				0F62C38423ED482000A6AC19 /* GetSliderInfo.swift in Sources */,
 				0F19339323EF19F6006ABFC3 /* KeyboardHandler.swift in Sources */,
 				0F19339823EF26C4006ABFC3 /* RegisterVC.swift in Sources */,
+				0F896F4C23F9850200A57776 /* Register+ViewModel.swift in Sources */,
 				0F62C37E23ED350400A6AC19 /* NonTransitionNavigator.swift in Sources */,
+				0F896F4823F9292A00A57776 /* AlertDialog.swift in Sources */,
 				0F19338E23EF14DF006ABFC3 /* UiButtonCustom.swift in Sources */,
+				0F896F5223FA437600A57776 /* SettingsViewController.swift in Sources */,
 				0F8D039E23F3F27B00322010 /* CircularTransition.swift in Sources */,
 				0F62C38723ED4C0F00A6AC19 /* SliderDataService.swift in Sources */,
 				0F19339023EF18ED006ABFC3 /* UITextFieldExtention.swift in Sources */,
+				0F896F3B23F687EB00A57776 /* ProfileDataService.swift in Sources */,
 				0F19338B23EF0D66006ABFC3 /* LoginUIExtention.swift in Sources */,
+				0F896F3523F683F700A57776 /* ProfileViewController.swift in Sources */,
+				0F896F3923F6875B00A57776 /* FirebaseDataClient.swift in Sources */,
+				0F118D9423FA56C3000D1DB8 /* EditEventViewController.swift in Sources */,
 				0F62C37B23ED31D800A6AC19 /* LoginVC.swift in Sources */,
+				0F896F4223F91D1800A57776 /* Event+ViewModel.swift in Sources */,
 				0F51717923F5C1B800FC9071 /* GuestureTabBar.swift in Sources */,
+				0F896F4A23F9847400A57776 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

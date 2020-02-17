@@ -8,6 +8,10 @@ target 'shashilaheshanCOBSCCOMP182P029eWent' do
   # Pods for shashilaheshanCOBSCCOMP182P029eWent
   pod 'lottie-ios'
   pod 'Kingfisher', '~> 5.0'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'RxSwift', '~> 5'
 
   target 'shashilaheshanCOBSCCOMP182P029eWentTests' do
     inherit! :search_paths

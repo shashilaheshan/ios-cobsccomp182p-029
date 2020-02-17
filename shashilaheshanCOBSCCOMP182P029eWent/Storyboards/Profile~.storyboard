@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fKm-87-V0U">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ABeeZee-Regular.ttf">
+            <string>ABeeZee-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Event Post View Controller-->
+        <scene sceneID="l5E-iN-dWQ">
+            <objects>
+                <viewController id="CKV-mt-oHU" customClass="EventPostViewController" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="22M-AM-fWY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SbX-LN-zmh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Event" rowHeight="198" id="Sr1-vH-mlw" customClass="CustomEventPostCellTableViewCell" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="198"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sr1-vH-mlw" id="zRL-xB-5iP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="197.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XN3-5g-vO3">
+                                                    <rect key="frame" x="0.0" y="128" width="67" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Like"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRq-nj-gjK">
+                                                    <rect key="frame" x="162" y="128" width="67" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Comment"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le2-P6-kZe">
+                                                    <rect key="frame" x="324" y="128" width="67" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Share"/>
+                                                </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home-run" translatesAutoresizingMaskIntoConstraints="NO" id="IJi-CB-8vf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnLikeEvent" destination="XN3-5g-vO3" id="7o9-be-gEu"/>
+                                            <outlet property="imgPost" destination="IJi-CB-8vf" id="ecX-6Z-o4h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CKV-mt-oHU" id="6FO-uA-0qF"/>
+                                    <outlet property="delegate" destination="CKV-mt-oHU" id="Y4N-Fd-klr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SbX-LN-zmh" firstAttribute="top" secondItem="fz8-Qw-s07" secondAttribute="top" id="hpZ-EP-NwV"/>
+                            <constraint firstItem="SbX-LN-zmh" firstAttribute="leading" secondItem="fz8-Qw-s07" secondAttribute="leading" id="moK-WK-O9x"/>
+                            <constraint firstItem="fz8-Qw-s07" firstAttribute="trailing" secondItem="SbX-LN-zmh" secondAttribute="trailing" id="vQ7-yz-Sdn"/>
+                            <constraint firstItem="fz8-Qw-s07" firstAttribute="bottom" secondItem="SbX-LN-zmh" secondAttribute="bottom" id="zfE-Zt-ZSD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fz8-Qw-s07"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="X1w-nl-nuh"/>
+                    <connections>
+                        <outlet property="postsTableView" destination="SbX-LN-zmh" id="tyd-zN-1kJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i0s-aF-iZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1341" y="388"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="c8R-Tj-NHY">
+            <objects>
+                <viewController id="bgr-3W-qFM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6WE-FP-EAn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="178" translatesAutoresizingMaskIntoConstraints="NO" id="6lN-JD-aZZ">
+                                <rect key="frame" x="20" y="74" width="374" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IS-pR-kUr">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="31"/>
+                                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBJ-s9-Tfv">
+                                        <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huw-a6-bpf">
+                                <rect key="frame" x="142.5" y="428" width="129.5" height="40.5"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="huw-a6-bpf" firstAttribute="centerX" secondItem="6WE-FP-EAn" secondAttribute="centerX" id="EFc-MU-cFe"/>
+                            <constraint firstItem="tLV-0Z-2td" firstAttribute="trailing" secondItem="6lN-JD-aZZ" secondAttribute="trailing" constant="20" id="PoU-yU-LPq"/>
+                            <constraint firstItem="huw-a6-bpf" firstAttribute="centerY" secondItem="6WE-FP-EAn" secondAttribute="centerY" id="Vde-nV-iUr"/>
+                            <constraint firstItem="6lN-JD-aZZ" firstAttribute="top" secondItem="tLV-0Z-2td" secondAttribute="top" constant="30" id="YAa-c2-cBL"/>
+                            <constraint firstItem="6lN-JD-aZZ" firstAttribute="leading" secondItem="tLV-0Z-2td" secondAttribute="leading" constant="20" id="cMs-5I-OvV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tLV-0Z-2td"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="Gzp-VD-5TZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Je8-YT-h3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255" y="388"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="wlc-Qe-ksB">
+            <objects>
+                <viewController id="War-Vb-5nu" customClass="ProfileViewController" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="axk-NF-vYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="LSF-g3-gdX">
+                                <rect key="frame" x="18" y="356" width="117" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ru3-EJ-GrQ" customClass="UiButtonCustom" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                <rect key="frame" x="10" y="713" width="394" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="L8Z-A3-Vpm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="25"/>
+                                <state key="normal" title="Update Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Update Profile"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.94963005119999999" green="0.60590027909999999" blue="0.35255397830000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFr-AY-CxW">
+                                <rect key="frame" x="15" y="64" width="132.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="pZT-es-aEY">
+                                <rect key="frame" x="20" y="140.5" width="374" height="220"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Cb-dW-0fF" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Lxc-fh-jDa"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CDl-Wm-Jp4" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="85" width="374" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Batch" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gq1-LW-SXS" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="170" width="374" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pZT-es-aEY" firstAttribute="leading" secondItem="N95-5S-sdk" secondAttribute="leading" constant="20" id="313-yX-1JZ"/>
+                            <constraint firstItem="QFr-AY-CxW" firstAttribute="leading" secondItem="N95-5S-sdk" secondAttribute="leading" constant="15" id="D2B-X1-tUU"/>
+                            <constraint firstItem="QFr-AY-CxW" firstAttribute="top" secondItem="N95-5S-sdk" secondAttribute="top" constant="20" id="MPQ-Om-wM8"/>
+                            <constraint firstItem="N95-5S-sdk" firstAttribute="trailing" secondItem="Ru3-EJ-GrQ" secondAttribute="trailing" constant="10" id="SLr-Ea-V3x"/>
+                            <constraint firstItem="Ru3-EJ-GrQ" firstAttribute="leading" secondItem="N95-5S-sdk" secondAttribute="leading" constant="10" id="adp-6U-Nlh"/>
+                            <constraint firstItem="N95-5S-sdk" firstAttribute="trailing" secondItem="pZT-es-aEY" secondAttribute="trailing" constant="20" id="goY-WQ-pT1"/>
+                            <constraint firstItem="pZT-es-aEY" firstAttribute="top" secondItem="QFr-AY-CxW" secondAttribute="bottom" constant="50" id="xhb-Kw-Vm2"/>
+                            <constraint firstItem="N95-5S-sdk" firstAttribute="bottom" secondItem="Ru3-EJ-GrQ" secondAttribute="bottom" constant="50" id="zYC-UD-lxw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N95-5S-sdk"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="pz4-cQ-g1v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWR-r0-UXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255.07246376811597" y="-356.25"/>
+        </scene>
+        <!--Guesture Tab Bar-->
+        <scene sceneID="Ugd-CN-t7R">
+            <objects>
+                <tabBarController id="fKm-87-V0U" customClass="GuestureTabBar" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z4o-n8-8Lr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CKV-mt-oHU" kind="relationship" relationship="viewControllers" id="SGD-Q8-Uso"/>
+                        <segue destination="War-Vb-5nu" kind="relationship" relationship="viewControllers" id="94Z-0g-VdA"/>
+                        <segue destination="bgr-3W-qFM" kind="relationship" relationship="viewControllers" id="6bb-34-h9v"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YfV-wQ-IBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1340" y="-355"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home-run" width="128" height="128"/>
+    </resources>
+</document>

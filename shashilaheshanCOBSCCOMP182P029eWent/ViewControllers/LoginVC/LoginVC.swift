@@ -8,6 +8,8 @@
 
 import UIKit
 import Lottie
+import FirebaseAuth
+import RxSwift
 
 class LoginVC: UIViewController , UIViewControllerTransitioningDelegate {
 
@@ -28,38 +30,19 @@ class LoginVC: UIViewController , UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var btnGuest: UIButton!
     
+    private var loginViewModel : LoginViewModel!
+    
+    private var disposeBag = DisposeBag()
     
    // @IBOutlet weak var txtP: UICustomTextField!
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        loginView.bindToKeyboard()
-       // txtPassword.becomeFirstResponder()
-//        txtPassword.isEnabled = false
-//        txtUsername.isEnabled = false
-    
-        AnimationController.playAnimation(aV: aV, name: "15230-illustration-animation")
-        
-        
-        
-//
-//        btnLogin.layer.backgroundColor = Colors.black.cgColor
-//
-        btnRegister.layer.backgroundColor = Colors.black.cgColor
-
-        btnGuest.layer.backgroundColor = Colors.black.cgColor
-        
-
-        
-        
-       // btnLogin.setGradientBackground(colorOne: Colors.green, colorTwo: Colors.darkGreen)
-//        btnGuest.layer.cornerRadius = btnGuest.frame.size.height/2
-//        btnGuest.layer.masksToBounds = true
-       // btnGuest.setGradientBackground(colorOne: Colors.orange, colorTwo: Colors.brightOrange)
-//        btnRegister.layer.cornerRadius = btnRegister.frame.size.height/2
-//        btnRegister.layer.masksToBounds = true
-//        btnRegister.setGradientBackground(colorOne: Colors.orange, colorTwo: Colors.brightOrange)
        
-        
+    
+        super.viewDidLoad()
+
+
+        AnimationController.playAnimation(aV: aV, name: "15230-illustration-animation")
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,4 +80,35 @@ class LoginVC: UIViewController , UIViewControllerTransitioningDelegate {
         return transition
     }
     
+    @IBAction func btnLoginUser(_ sender: Any) {
+        var alert: UIAlertView = UIAlertView(title: "Please wait", message: "Loggin User...", delegate: nil, cancelButtonTitle: "Cancel");
+        
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x:50, y:10, width:37, height:37))
+        loadingIndicator.center = self.view.center;
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.setValue(loadingIndicator, forKey: "accessoryView")
+        loadingIndicator.startAnimating()
+        self.loginViewModel = LoginViewModel(e_mail: txtUsername.text!, p_word: txtPassword.text!)
+        
+        self.loginViewModel.isLoading.subscribe(onNext: {
+            [weak self] loading in
+            
+            if(loading){
+                alert.show();
+            }else {
+                alert.dismiss(withClickedButtonIndex: 0, animated: true)
+                
+            }
+        }).disposed(by: disposeBag)
+        
+        self.loginViewModel.loginUser()
+        
+    }
+    @IBAction func btnGuestLogin(_ sender: Any) {
+        
+    }
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shashilaheshanCOBSCCOMP182P029eWent/UIExtentions/UiElementsExtentions/UITextFieldExtention.swift"
+            timestampString = "603568046.178324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "paddingLeftCustom"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shashilaheshanCOBSCCOMP182P029eWent.UICustomTextField.paddingLeftCustom.modify : CoreGraphics.CGFloat"
+                  moduleName = "shashilaheshanCOBSCCOMP182P029eWent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shashilaheshan/Desktop/coventry/EVENT-APP-COURSEWORK/eWent/shashilaheshanCOBSCCOMP182P029eWent/UIExtentions/UiElementsExtentions/UITextFieldExtention.swift"
+                  timestampString = "603358611.621879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shashilaheshanCOBSCCOMP182P029eWent.UICustomTextField.paddingLeftCustom.modify : CoreGraphics.CGFloat with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "shashilaheshanCOBSCCOMP182P029eWent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shashilaheshan/Desktop/coventry/EVENT-APP-COURSEWORK/eWent/shashilaheshanCOBSCCOMP182P029eWent/UIExtentions/UiElementsExtentions/UITextFieldExtention.swift"
+                  timestampString = "603358611.626014"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dpE-vn-3QY">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ABeeZee-Regular.ttf">
+            <string>ABeeZee-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="PSB-YZ-IgQ">
+            <objects>
+                <viewController storyboardIdentifier="Register_SB" id="dpE-vn-3QY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yf3-Lk-D1u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veP-fz-TY3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="922"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbd-aJ-RJ6">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="7k0-QF-Zp7"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit an Event.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1F-Xl-F64">
+                                        <rect key="frame" x="20" y="63" width="176.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Xah-7U-NVA">
+                                        <rect key="frame" x="20" y="124" width="374" height="390"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwk-eS-akw" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="pci-1P-Kbf"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-ie-8Rs" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="85" width="374" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BlW-wV-6BB" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="170" width="374" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date and Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Jx-aF-f2f" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="255" width="374" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Image" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gww-sp-bB7" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="340" width="374" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8r-vK-zbs">
+                                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="J7A-nT-B2b"/>
+                                            <constraint firstAttribute="height" constant="30" id="m3M-ri-FKi"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="close"/>
+                                        <connections>
+                                            <action selector="btnClose:" destination="dpE-vn-3QY" eventType="touchUpInside" id="u1S-t8-EuS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEh-sq-cSy" customClass="UiButtonCustom" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="850" width="374" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="iep-vi-hcZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="25"/>
+                                        <state key="normal" title="Update Profile">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Add Event"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.94963005119999999" green="0.60590027909999999" blue="0.35255397830000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addEvent:" destination="dpE-vn-3QY" eventType="touchUpInside" id="jGR-dQ-PzL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="s8r-vK-zbs" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="0wq-fh-crk"/>
+                                    <constraint firstAttribute="trailing" secondItem="KEh-sq-cSy" secondAttribute="trailing" constant="20" id="3ew-P4-yWn"/>
+                                    <constraint firstAttribute="bottom" secondItem="KEh-sq-cSy" secondAttribute="bottom" constant="100" id="I5U-qr-gHI"/>
+                                    <constraint firstItem="Rbd-aJ-RJ6" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" id="IgO-SO-izC"/>
+                                    <constraint firstItem="KEh-sq-cSy" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="M6w-HA-Cci"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rbd-aJ-RJ6" secondAttribute="trailing" id="T9Y-VC-VXe"/>
+                                    <constraint firstItem="s8r-vK-zbs" firstAttribute="top" secondItem="veP-fz-TY3" secondAttribute="top" constant="20" id="ZX0-tZ-O73"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rbd-aJ-RJ6" secondAttribute="bottom" id="dxw-lZ-wa3"/>
+                                    <constraint firstItem="i1F-Xl-F64" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="eWD-3Q-7N9"/>
+                                    <constraint firstItem="Xah-7U-NVA" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="hQp-kv-YW6"/>
+                                    <constraint firstItem="Xah-7U-NVA" firstAttribute="top" secondItem="i1F-Xl-F64" secondAttribute="bottom" constant="30" id="jOo-V0-Gwm"/>
+                                    <constraint firstItem="Rbd-aJ-RJ6" firstAttribute="top" secondItem="veP-fz-TY3" secondAttribute="top" id="o8w-pt-IWQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xah-7U-NVA" secondAttribute="trailing" constant="20" id="rf7-1r-oU6"/>
+                                    <constraint firstItem="i1F-Xl-F64" firstAttribute="top" secondItem="s8r-vK-zbs" secondAttribute="bottom" constant="13" id="yAR-7t-MuD"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rbd-aJ-RJ6" firstAttribute="width" secondItem="yf3-Lk-D1u" secondAttribute="width" id="T5H-98-3Rx"/>
+                            <constraint firstItem="6RM-5A-kz9" firstAttribute="trailing" secondItem="veP-fz-TY3" secondAttribute="trailing" id="kxr-43-fLu"/>
+                            <constraint firstItem="veP-fz-TY3" firstAttribute="top" secondItem="6RM-5A-kz9" secondAttribute="top" id="oxh-hV-Q7c"/>
+                            <constraint firstItem="6RM-5A-kz9" firstAttribute="bottom" secondItem="veP-fz-TY3" secondAttribute="bottom" id="qnn-fx-4zZ"/>
+                            <constraint firstItem="veP-fz-TY3" firstAttribute="leading" secondItem="6RM-5A-kz9" secondAttribute="leading" id="wq6-zl-XBP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6RM-5A-kz9"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="eventDatetime" destination="2Jx-aF-f2f" id="fGt-ek-Dyw"/>
+                        <outlet property="eventDesc" destination="BlW-wV-6BB" id="CGv-lZ-Xfk"/>
+                        <outlet property="eventImage" destination="gww-sp-bB7" id="05M-5v-WO0"/>
+                        <outlet property="eventLocation" destination="g5Q-ie-8Rs" id="MMG-Oi-Zh3"/>
+                        <outlet property="eventName" destination="zwk-eS-akw" id="tqk-H2-Lzc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpU-GG-VHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="-402"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="32" height="32"/>
+    </resources>
+</document>
