@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Event {
     
@@ -14,7 +15,8 @@ class Event {
     var event_location :String!
     var description :String!
     var datetime :String!
-    var image :String!
+    var image :UIImage!
+    var imageURL : String!
     var eventId :String!
     var userId :String!
     
@@ -23,10 +25,12 @@ class Event {
         self.event_location = eVM.event_location
         self.description = eVM.description
         self.datetime  = eVM.datetime
-        self.image = eVM.image
+        self.image = eVM.eventImages
+        self.eventId = eVM.eventId
+        self.imageURL = eVM.imgURL
     
     }
-    init(event: String,e_location : String,desc :String,date_time :String,img :String,eID :String,userId : String) {
+    init(event: String,e_location : String,desc :String,date_time :String,img :UIImage,eID :String,userId : String,imgurl :String) {
         self.event_name = event
         self.event_location = e_location
         self.description = desc
@@ -34,18 +38,15 @@ class Event {
         self.image = img
         self.eventId = eID
         self.userId = userId
+        self.imageURL = imgurl
     }
-
-//    var dictionaryDataCart : [String : AnyObject] {
-//
-//        var objDict : [String : AnyObject]!
-//        
-//        objDict["e_name"] = self.event_name
-//        objDict["e_location"] = self.event_location as AnyObject?;
-//        objDict["e_desc"] = self.event_location as AnyObject?;
-//        objDict["e_datetime"] = self.datetime as AnyObject?;
-//        objDict["e_image"] = self.image as AnyObject?
-//
-//        return objDict;
-//    }
+    init(event: String,e_location : String,desc :String,date_time :String,eID :String,userId : String,imgurl :String) {
+        self.event_name = event
+        self.event_location = e_location
+        self.description = desc
+        self.datetime = date_time
+        self.eventId = eID
+        self.userId = userId
+        self.imageURL = imgurl
+    }
 }

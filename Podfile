@@ -2,8 +2,9 @@
 # platform :ios, '9.0'
 
 target 'shashilaheshanCOBSCCOMP182P029eWent' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  # Comment the next line if you're not using Swift and don't want to use dynamic #frameworks
   use_frameworks!
+  #use_modular_headers!
 
   # Pods for shashilaheshanCOBSCCOMP182P029eWent
   pod 'lottie-ios'
@@ -12,6 +13,7 @@ target 'shashilaheshanCOBSCCOMP182P029eWent' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'RxSwift', '~> 5'
+  pod 'LocationPickerViewController'
 
   target 'shashilaheshanCOBSCCOMP182P029eWentTests' do
     inherit! :search_paths

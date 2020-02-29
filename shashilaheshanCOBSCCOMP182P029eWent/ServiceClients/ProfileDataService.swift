@@ -16,9 +16,10 @@ class ProfileDataService {
             "name": user.fullName!,
             "email": user.email!,
             "nickname":user.nickName!,
-            "batch": user.batch!
+            "batch": user.batch!,
+            "profile_image_url": user.image_url!
         ]) { err in
-            if let err = err {
+            if err != nil {
                 DispatchQueue.main.async {
                     completion(true)
                 }
@@ -28,13 +29,15 @@ class ProfileDataService {
         }
 
     }
-    public func getProfileData(completion :@escaping (Profile)->()) {
+    
+    
+    public func getProfileData(email:String,completion :@escaping (Profile)->()) {
         
-        Fbc.shared.collection("users").document("bso")
+        Fbc.shared.collection("users").document(email)
         .getDocument { (snapshot, err) in
             if let data = snapshot?.data() {
                 
-                let profile = Profile(mail: data["email"] as! String, fname: data["name"] as! String, batc: data["batch"] as! String)
+                let profile = Profile(mail: data["email"] as! String, fname: data["name"] as! String, batc: data["batch"] as! String ,img: data["profile_image_url"] as! String)
                 
                 DispatchQueue.main.async {
                     completion(profile)

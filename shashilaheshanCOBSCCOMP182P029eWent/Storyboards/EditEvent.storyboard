@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Edit Event View Controller-->
         <scene sceneID="PSB-YZ-IgQ">
             <objects>
-                <viewController storyboardIdentifier="Register_SB" id="dpE-vn-3QY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditEvent_SB" id="dpE-vn-3QY" customClass="EditEventViewController" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yf3-Lk-D1u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="close"/>
                                         <connections>
-                                            <action selector="btnClose:" destination="dpE-vn-3QY" eventType="touchUpInside" id="u1S-t8-EuS"/>
+                                            <action selector="btnClose:" destination="dpE-vn-3QY" eventType="touchUpInside" id="d8N-WI-wME"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEh-sq-cSy" customClass="UiButtonCustom" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
@@ -174,7 +174,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Add Event"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Edit Event"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.94963005119999999" green="0.60590027909999999" blue="0.35255397830000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
@@ -183,14 +183,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="addEvent:" destination="dpE-vn-3QY" eventType="touchUpInside" id="jGR-dQ-PzL"/>
+                                            <action selector="btnEditEvent:" destination="dpE-vn-3QY" eventType="touchUpInside" id="dat-Ah-j0k"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="s8r-vK-zbs" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="0wq-fh-crk"/>
                                     <constraint firstAttribute="trailing" secondItem="KEh-sq-cSy" secondAttribute="trailing" constant="20" id="3ew-P4-yWn"/>
-                                    <constraint firstAttribute="bottom" secondItem="KEh-sq-cSy" secondAttribute="bottom" constant="100" id="I5U-qr-gHI"/>
                                     <constraint firstItem="Rbd-aJ-RJ6" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" id="IgO-SO-izC"/>
                                     <constraint firstItem="KEh-sq-cSy" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="M6w-HA-Cci"/>
                                     <constraint firstAttribute="trailing" secondItem="Rbd-aJ-RJ6" secondAttribute="trailing" id="T9Y-VC-VXe"/>
@@ -208,6 +207,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Rbd-aJ-RJ6" firstAttribute="width" secondItem="yf3-Lk-D1u" secondAttribute="width" id="T5H-98-3Rx"/>
+                            <constraint firstItem="KEh-sq-cSy" firstAttribute="top" secondItem="6RM-5A-kz9" secondAttribute="bottom" constant="-72" id="fTG-2C-7ZQ"/>
                             <constraint firstItem="6RM-5A-kz9" firstAttribute="trailing" secondItem="veP-fz-TY3" secondAttribute="trailing" id="kxr-43-fLu"/>
                             <constraint firstItem="veP-fz-TY3" firstAttribute="top" secondItem="6RM-5A-kz9" secondAttribute="top" id="oxh-hV-Q7c"/>
                             <constraint firstItem="6RM-5A-kz9" firstAttribute="bottom" secondItem="veP-fz-TY3" secondAttribute="bottom" id="qnn-fx-4zZ"/>
@@ -217,16 +217,16 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="eventDatetime" destination="2Jx-aF-f2f" id="fGt-ek-Dyw"/>
-                        <outlet property="eventDesc" destination="BlW-wV-6BB" id="CGv-lZ-Xfk"/>
-                        <outlet property="eventImage" destination="gww-sp-bB7" id="05M-5v-WO0"/>
-                        <outlet property="eventLocation" destination="g5Q-ie-8Rs" id="MMG-Oi-Zh3"/>
-                        <outlet property="eventName" destination="zwk-eS-akw" id="tqk-H2-Lzc"/>
+                        <outlet property="txtEventDateTime" destination="2Jx-aF-f2f" id="1aF-9j-5ik"/>
+                        <outlet property="txtEventImage" destination="gww-sp-bB7" id="QtP-lA-raM"/>
+                        <outlet property="txtEventLocation" destination="g5Q-ie-8Rs" id="Evp-8B-BWN"/>
+                        <outlet property="txtEventName" destination="zwk-eS-akw" id="qDT-Q0-8tw"/>
+                        <outlet property="txtEventdescription" destination="BlW-wV-6BB" id="kI5-kU-hbp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpU-GG-VHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="-402"/>
+            <point key="canvasLocation" x="628.98550724637687" y="-402.45535714285711"/>
         </scene>
     </scenes>
     <resources>

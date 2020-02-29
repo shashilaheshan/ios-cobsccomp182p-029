@@ -52,5 +52,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>Using your device camera for taking profile images and event images.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Your location is required to get eWent Location.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your location is required to get eWent Location.</string>
 </dict>
 </plist>

@@ -7,12 +7,26 @@
 //
 
 import Foundation
-
+import UIKit
+protocol ProfileViewModelDelegate {
+    func didFinishedFetchingUserProfile(user : User,cell : CustomEventPostCellTableViewCell)
+}
+protocol SingleProfileViewModelDelegate{
+     func didFinishedFetchingProfile(profile : Profile)
+    func didFinishSingleUserEventsFetch(events : [Event])
+}
 class ProfileViewModel {
     var email :String?
     var f_name :String?
     var batch :String?
     let profileService : ProfileDataService = ProfileDataService()
+    
+    let eventDataService : EventDataService =  EventDataService()
+    
+    var profileViewModelDelegate : ProfileViewModelDelegate?
+    
+    var singleProfileViewModelDelegate : SingleProfileViewModelDelegate?
+    
     init() {
         
     }
@@ -24,22 +38,35 @@ class ProfileViewModel {
         
     }
    
-    func saveProfileInfo(profileD : Profile)  {
-//        self.profileService.saveProfileData(profile: profileD)
-        
-        self.profileService.getProfileData { profile in
-            print(profile)
+//    func saveProfileInfo(profileD : Profile)  {
+//        
+//        self.profileService.getProfileData { profile in
+//            print(profile)
+//        }
+//        
+//    }
+    
+    func getProfileInfo(userId: String,cell:CustomEventPostCellTableViewCell)  {
+       
+        self.eventDataService.getUserProfile(userId: userId ) { profile in
+           
+            self.profileViewModelDelegate?.didFinishedFetchingUserProfile(user: profile,cell: cell)
         }
         
     }
     
-    func getProfileInfo()  {
-        //        self.profileService.saveProfileData(profile: profileD)
-        
-        self.profileService.getProfileData { profile in
-            print(profile.email!)
+    func getProfileInfoForSingleUser(userId: String)  {
+        self.profileService.getProfileData(email:  userId ) { profile in
+            
+            self.singleProfileViewModelDelegate?.didFinishedFetchingProfile(profile: profile)
         }
-        
+    }
+    
+    func getEventsBelongsToSingleUser(userId :String)  {
+        self.eventDataService.fetchAllEventsBelongsToUser(userId: userId) { events
+             in
+            self.singleProfileViewModelDelegate?.didFinishSingleUserEventsFetch(events: events)
+        }
     }
     
     

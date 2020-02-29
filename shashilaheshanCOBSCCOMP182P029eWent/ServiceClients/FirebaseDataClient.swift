@@ -9,14 +9,23 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 
 class Fbc {
     
     static let shared = Firestore.firestore()
+    
     static let settings = FirestoreSettings()
     
     
 }
 class AuthC {
+    
     static let shared = Auth.auth()
+    
+}
+
+class Fbs {
+    
+    static let shared  = Storage.storage().reference()
 }

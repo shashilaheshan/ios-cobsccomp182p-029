@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController {
        
     }
     @IBAction func btnUpdateProfileInfo(_ sender: Any) {
-        self.profileViewModel.getProfileInfo()
+        //self.profileViewModel.getProfileInfo()
         
         //self.profileViewModel.saveProfileInfo(profileD : Profile(mail: txtFEmail.text!, fname: txtFFname.text!, batc:txtFBatch.text!))
     }

@@ -32,8 +32,12 @@ class CustomEventPostCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var btnEditEvent: UiButtonCustom!
     
+    @IBOutlet weak var imgView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        DispatchQueue.main.async {
+            self.imgPost.applyshadowWithCorner(containerView: self.imgView, cornerRadious: 10)
+        }
         // Initialization code
     }
 
@@ -42,4 +46,18 @@ class CustomEventPostCellTableViewCell: UITableViewCell {
 
     }
 
+}
+extension UIImageView {
+    func applyshadowWithCorner(containerView : UIView, cornerRadious : CGFloat){
+        containerView.clipsToBounds = false
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 2
+        containerView.layer.shadowOffset = CGSize.zero
+        containerView.layer.shadowRadius = 10
+        containerView.layer.cornerRadius = cornerRadious
+        containerView.layer.shadowPath = UIBezierPath(roundedRect: containerView.bounds, cornerRadius: cornerRadious).cgPath
+        self.clipsToBounds = true
+        self.layer.cornerRadius = cornerRadious
+    }
+    
 }

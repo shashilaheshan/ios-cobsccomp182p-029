@@ -61,4 +61,6 @@ public struct UtilsApp {
 
      }
     """
+    static let default_image_profile :String = "https://scontent.fcmb3-1.fna.fbcdn.net/v/t1.0-1/c0.0.160.160a/p160x160/75339702_2451156151668669_8419901170373361664_o.jpg?_nc_cat=106&_nc_ohc=hFwg6kZo6jEAX_5S8c6&_nc_ht=scontent.fcmb3-1.fna&oh=861573f35278bf6653192c851aaf1d79&oe=5EB53CBA"
+    static let default_event_image :String = "https://wallpaperstock.net/green-nature-wallpapers_21556_1680x1050.jpg"
 }

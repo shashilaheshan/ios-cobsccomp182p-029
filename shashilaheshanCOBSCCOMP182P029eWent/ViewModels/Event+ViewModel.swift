@@ -7,9 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 import RxSwift
 
+protocol EventViewModelDelegate {
+    func didFinishFetchingEvents(events:[Event])
+    
+    func checkUserLikedToAnEvent(like : Bool,cell : CustomEventPostCellTableViewCell)
+    
+    func getLikeCountForEachEvent(count : Int,cell : CustomEventPostCellTableViewCell)
+    
+}
 class EventViewModel {
     
     
@@ -18,8 +27,11 @@ class EventViewModel {
     var description :String!
     var datetime :String!
     var image :String!
+    var eventId :String!
+    var eventImages : UIImage!
+    var imgURL :String!
     
-  
+    var eventViewModelDelegate : EventViewModelDelegate?
     
     var eventDataService : EventDataService = EventDataService()
     
@@ -29,18 +41,19 @@ class EventViewModel {
     }
     init(){}
    
-    init(eventname :String,eventlocaton :String,desc : String,date_time :String ,img :String) {
+    init(eventname :String,eventlocaton :String,desc : String,date_time :String ,eID :String,eventImage: UIImage,imgURL:String) {
         self.event_name = eventname
         self.event_location = eventlocaton
         self.description = desc
         self.datetime = date_time
-        self.image = img
+        self.eventImages = eventImage
+        self.eventId = eID
+        self.imgURL = imgURL
     }
     
     func saveEventData()  {
-    
         self.is_loading.value = true
-        eventDataService.saveEventData(event: Event(eVM: self)) { data,success  in
+        self.eventDataService.saveEventData(event: Event(eVM: self)) { data,success  in
             
           
             self.is_loading.value = false
@@ -50,9 +63,53 @@ class EventViewModel {
     func fetchAllEvents(){
         
         self.eventDataService.fetchAllEvents { events in
-            print(events[0].event_name)
+            self.eventViewModelDelegate?.didFinishFetchingEvents(events: events)
         }
     }
+    
+    func editEventData() {
+        self.is_loading.value = true
+        self.eventDataService.editEventData(event: Event(eVM: self)) { data,success  in
+            self.is_loading.value = success
+        }
+    }
+//    func goingSingleEvent(eventId:String,userId:String,completion:@escaping(Bool)->()) {
+//        self.eventDataService.goingToSingleEvent(eventId: eventId, userId: userId){ success in
+//            if(success) {
+//                completion(true)
+//            }else{
+//               completion(false)
+//            }
+//        }
+//    }
+    func goingNotGoingToSingleEvent(eventId:String,userId:String,completion:@escaping(Bool)->()) {
+        self.eventDataService.goingNotGoingToSingleEvent(eventId: eventId, userId: userId){ success in
+            if(success) {
+                completion(true)
+            }else{
+                completion(false)
+            }
+            
+        }
+    }
+    func commentToSingleEvent(eventId: String,comment :String) {
+       self.eventDataService.commentToSingleEvent(eventId: eventId, comment: comment)
+    }
+    
+    func checkIfUserGoingToAnEvent(eventId : String,cell : CustomEventPostCellTableViewCell){
+        self.eventDataService.checkIfUserGoingNotGoingToAnEvent(eventId: eventId) { liked in
+            //print(liked)
+            print(eventId)
+            print(liked)
+            self.eventViewModelDelegate?.checkUserLikedToAnEvent(like: liked, cell: cell)
+        }
+    }
+    func getGoingCountForEachEvent(eventId : String,cell : CustomEventPostCellTableViewCell){
+        self.eventDataService.getGoingCountForEachEvent(eventId: eventId) { (count) in
+            self.eventViewModelDelegate?.getLikeCountForEachEvent(count: count, cell: cell)
+        }
+    }
+    
     
     
 }
@@ -86,7 +143,7 @@ class EventListViewModel {
         self.event_location = eModel.event_location
         self.description = eModel.description
         self.datetime = eModel.datetime
-        self.image = eModel.image
+        self.image = eModel.imageURL
         self.event_id = eModel.eventId
         self.userId = eModel.userId
     }

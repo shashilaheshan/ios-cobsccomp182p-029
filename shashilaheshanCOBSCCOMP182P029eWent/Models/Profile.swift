@@ -12,13 +12,15 @@ struct Profile {
     
     var email :String?
     var f_name :String?
-    var batch :String?
+    var commiunity :String?
+    var image : String?
     
-    init(mail : String,fname :String,batc :String) {
+    init(mail : String,fname :String,batc :String,img :String) {
         
         self.email = mail
         self.f_name = fname
-        self.batch = batc
+        self.commiunity = batc
+        self.image = img
     }
     init() {
         

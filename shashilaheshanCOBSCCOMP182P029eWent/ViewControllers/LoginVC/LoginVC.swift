@@ -30,7 +30,7 @@ class LoginVC: UIViewController , UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var btnGuest: UIButton!
     
-    private var loginViewModel : LoginViewModel!
+    private var loginViewModel : LoginViewModel = LoginViewModel()
     
     private var disposeBag = DisposeBag()
     
@@ -40,7 +40,8 @@ class LoginVC: UIViewController , UIViewControllerTransitioningDelegate {
     
         super.viewDidLoad()
 
-
+       // loginViewModel.loginViewModelDelegate = self
+        
         AnimationController.playAnimation(aV: aV, name: "15230-illustration-animation")
 
     }
@@ -81,29 +82,30 @@ class LoginVC: UIViewController , UIViewControllerTransitioningDelegate {
     }
     
     @IBAction func btnLoginUser(_ sender: Any) {
-        var alert: UIAlertView = UIAlertView(title: "Please wait", message: "Loggin User...", delegate: nil, cancelButtonTitle: "Cancel");
-        
-        
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x:50, y:10, width:37, height:37))
-        loadingIndicator.center = self.view.center;
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        loadingIndicator.startAnimating();
-        
-        alert.setValue(loadingIndicator, forKey: "accessoryView")
-        loadingIndicator.startAnimating()
+//        let alert: UIAlertView = UIAlertView(title: "Please wait", message: "Loggin User...", delegate: nil, cancelButtonTitle: "Cancel");
+//
+//
+//        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x:50, y:10, width:37, height:37))
+//        loadingIndicator.center = self.view.center;
+//        loadingIndicator.hidesWhenStopped = true
+//        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+//        loadingIndicator.startAnimating();
+//
+//        alert.setValue(loadingIndicator, forKey: "accessoryView")
+//        loadingIndicator.startAnimating()
         self.loginViewModel = LoginViewModel(e_mail: txtUsername.text!, p_word: txtPassword.text!)
+        self.loginViewModel.loginViewModelDelegate = self
         
-        self.loginViewModel.isLoading.subscribe(onNext: {
-            [weak self] loading in
-            
-            if(loading){
-                alert.show();
-            }else {
-                alert.dismiss(withClickedButtonIndex: 0, animated: true)
-                
-            }
-        }).disposed(by: disposeBag)
+//        self.loginViewModel.isLoading.subscribe(onNext: {
+//            [weak self] loading in
+//
+//            if(loading){
+//                alert.show();
+//            }else {
+//                alert.dismiss(withClickedButtonIndex: 0, animated: true)
+//
+//            }
+//        }).disposed(by: disposeBag)
         
         self.loginViewModel.loginUser()
         

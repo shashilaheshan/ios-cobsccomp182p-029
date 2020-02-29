@@ -250,7 +250,7 @@ PODS:
     - Kingfisher/Core (= 5.10.1)
   - Kingfisher/Core (5.10.1)
   - leveldb-library (1.22)
-  - ListPlaceholder (1.4)
+  - LocationPickerViewController (3.4)
   - lottie-ios (3.1.5)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
@@ -264,7 +264,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - Kingfisher (~> 5.0)
-  - ListPlaceholder
+  - LocationPickerViewController
   - lottie-ios
   - RxSwift (~> 5)
 
@@ -288,7 +288,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Kingfisher
     - leveldb-library
-    - ListPlaceholder
+    - LocationPickerViewController
     - lottie-ios
     - nanopb
     - RxSwift
@@ -312,11 +312,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
-  ListPlaceholder: 08ddaddf67520a20fc52cf37160fb56aa64d071d
+  LocationPickerViewController: 4f33d63587bca682267a09779de2b2e09cf5b8e2
   lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: 4c4016e42e26b6fbe2d2971ade782b8a8dc9cced
+PODFILE CHECKSUM: c4f234a4725623542a0366bfc7b8dae22467bf4c
 
 COCOAPODS: 1.6.1
