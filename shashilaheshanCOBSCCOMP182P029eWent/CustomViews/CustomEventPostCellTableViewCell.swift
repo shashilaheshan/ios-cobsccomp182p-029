@@ -20,6 +20,7 @@ class CustomEventPostCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var btnShareEvent: UIButton!
     
+    @IBOutlet weak var btnCommiunity: UiButtonCustom!
     @IBOutlet weak var txtLikeCount: UILabel!
     
     @IBOutlet weak var imgUser: UIImageView!

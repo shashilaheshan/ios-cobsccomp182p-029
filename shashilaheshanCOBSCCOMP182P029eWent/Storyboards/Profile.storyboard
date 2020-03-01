@@ -60,6 +60,18 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shashila Heshan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaK-KE-igs">
+                                    <rect key="frame" x="20" y="307" width="188" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0712148820" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXi-As-ZKf">
+                                    <rect key="frame" x="20" y="344" width="148" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -68,15 +80,20 @@
                                 <constraint firstAttribute="bottom" secondItem="JM6-yJ-Cpx" secondAttribute="bottom" id="L05-ph-huE"/>
                                 <constraint firstAttribute="trailing" secondItem="gTB-j3-Vhc" secondAttribute="trailing" constant="20" id="MMX-1I-Cyq"/>
                                 <constraint firstAttribute="trailing" secondItem="oyf-YE-SLa" secondAttribute="trailing" constant="20" id="Qfm-XP-7Zy"/>
+                                <constraint firstItem="HXi-As-ZKf" firstAttribute="top" secondItem="zaK-KE-igs" secondAttribute="bottom" constant="8" id="QsN-2b-Qx2"/>
+                                <constraint firstItem="zaK-KE-igs" firstAttribute="top" secondItem="JM6-yJ-Cpx" secondAttribute="bottom" constant="-113" id="TGy-mb-xck"/>
                                 <constraint firstAttribute="trailing" secondItem="JM6-yJ-Cpx" secondAttribute="trailing" id="YSm-vH-6Ek"/>
                                 <constraint firstItem="9YE-DB-fyr" firstAttribute="leading" secondItem="BKi-Ts-ryo" secondAttribute="leading" constant="10" id="b7K-If-tkb"/>
                                 <constraint firstAttribute="bottom" secondItem="gTB-j3-Vhc" secondAttribute="bottom" constant="20" id="dTE-oH-KhR"/>
+                                <constraint firstItem="HXi-As-ZKf" firstAttribute="top" secondItem="JM6-yJ-Cpx" secondAttribute="bottom" constant="-76" id="mBc-xm-bAw"/>
+                                <constraint firstItem="zaK-KE-igs" firstAttribute="leading" secondItem="BKi-Ts-ryo" secondAttribute="leading" constant="20" id="mQA-E8-yiT"/>
                                 <constraint firstAttribute="bottom" secondItem="oyf-YE-SLa" secondAttribute="bottom" constant="30" id="o9O-R4-hMa"/>
+                                <constraint firstItem="HXi-As-ZKf" firstAttribute="leading" secondItem="zaK-KE-igs" secondAttribute="leading" id="tVC-Gb-OUZ"/>
                                 <constraint firstItem="9YE-DB-fyr" firstAttribute="top" secondItem="BKi-Ts-ryo" secondAttribute="top" constant="30" id="zGy-cf-ftF"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="272" id="AtD-kP-9VV" customClass="TableViewCell" customModule="Streachy_Header_Effect_Starter_Project" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="272" id="AtD-kP-9VV" customClass="TableViewCell" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="475.5" width="414" height="272"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AtD-kP-9VV" id="pao-YX-t8f">
@@ -141,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wx4-h7-IbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298.55072463768118" y="12.053571428571429"/>
+            <point key="canvasLocation" x="-309" y="-356"/>
         </scene>
     </scenes>
     <resources>

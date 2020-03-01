@@ -10,10 +10,11 @@ import UIKit
 import Kingfisher
 
 class EventPostViewController: UIViewController,UIViewControllerTransitioningDelegate {
-     let transition = CircularTransition()
+    let transition = CircularTransition()
     var pullControl = UIRefreshControl()
     
     let def = UserDefaults.standard
+    var authedUser :Bool = false
     
     @IBOutlet weak var postsTableView: UITableView!
     
@@ -21,27 +22,17 @@ class EventPostViewController: UIViewController,UIViewControllerTransitioningDel
     
     var eventsListViewModel : EventsListViewModel = EventsListViewModel()
     
+    @IBOutlet weak var btnAddEvent: UiButtonCustom!
     var eventDataService : EventDataService = EventDataService()
     
     var profileViewModel : ProfileViewModel =  ProfileViewModel()
     
+    var authViewModel :AuthViewModel =  AuthViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        eventViewModel.eventViewModelDelegate = self
-        
-        profileViewModel.profileViewModelDelegate = self
-        
-        self.eventViewModel.fetchAllEvents()
-        
-        self.pullToRefresh()
-        
-    }
-    func pullToRefresh(){
-        let refresh = UIRefreshControl()
-        refresh.addTarget(self, action: #selector(handleTopRefresh(_:)), for: .valueChanged )
-        refresh.tintColor = UIColor.black
-        self.postsTableView.addSubview(refresh)
+        self.setupView()
         
     }
     
@@ -73,7 +64,7 @@ class EventPostViewController: UIViewController,UIViewControllerTransitioningDel
     }
     
     @IBAction func btnAlert(_ sender: Any) {
-        AlertView.instance.showAlert(title: "Success", message: "You are succesfully loged into the system.", alertType: .success)
+        AlertView.instance.showAlert(title: "Notifications", message: "You have no notifications..", alertType: .success)
     }
 }
 extension EventPostViewController:UITableViewDelegate,UITableViewDataSource{
@@ -87,85 +78,18 @@ extension EventPostViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = self.postsTableView.dequeueReusableCell(withIdentifier: "Event", for: indexPath) as! CustomEventPostCellTableViewCell
+       
+        var cell :UITableViewCell!
         
-        let url = URL(string: "https://i.pinimg.com/originals/c2/f1/06/c2f106c6e9a04467067864f3ee103b7b.jpg")
-        let url2 = URL(string: "https://i.pinimg.com/originals/ec/a8/9a/eca89af3c15d4e1fe509baac34517f25.jpg")
-        print(self.eventsListViewModel.eventsListViewModel[indexPath.row].image!)
-        cell.imgPost.kf.indicatorType = .activity
-        cell.imgPost.kf.setImage(
-            with: self.eventsListViewModel.eventsListViewModel[indexPath.row].image! == "" ?  url  :     URL(string:self.eventsListViewModel.eventsListViewModel[indexPath.row].image!),
-            placeholder: UIImage(named: "placeholderImage"),
-            options: [
-                
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-        {
-            result in
-            
+      
+        if(self.authedUser){
+            cell =  self.generateAuthedUsereEventTableViewCells(tableView, cellForRowAt:indexPath )
+        }else{
+
+            cell =  self.generateGuestUserEventTableViewcells(tableView, cellForRowAt:indexPath )
+
         }
-        
-        self.profileViewModel.getProfileInfo(userId: self.eventsListViewModel.eventsListViewModel[indexPath.row].userId!, cell: cell)
-        
-        
-        cell.imgUser.layer.cornerRadius = 20
-        
-        
-        
-        cell.txtEventTime.text = self.eventsListViewModel.eventsListViewModel[indexPath.row].datetime!
-        
-        cell.btnLocation.setTitle(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_location!,for: .normal)
-        
-        if(def.value(forKey: "userID") as! String == self.eventsListViewModel.eventsListViewModel[indexPath.row].userId!) {
-            cell.btnEditEvent.isHidden = false
-            cell.btnEditEvent.isEnabled = true
-            cell.btnEditEvent.tag = indexPath.row
-            
-            cell.btnEditEvent.addTarget(self, action: #selector(editEvent(sender:)), for: .touchUpInside)
-        }else {
-            cell.btnEditEvent.isHidden = true
-            cell.btnEditEvent.isEnabled = false
-        }
-        
-        
-        
-        cell.txtEventDesction.text = "\(self.eventsListViewModel.eventsListViewModel[indexPath.row].description!) posted by \(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_name!) @ \(self.eventsListViewModel.eventsListViewModel[indexPath.row].datetime!) # \(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_location!)"
-        
-        
-        self.eventViewModel.checkIfUserGoingToAnEvent(eventId: self.eventsListViewModel.eventsListViewModel[indexPath.row].event_id!, cell: cell)
-        //print(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_id!)
-        
-        
-        self.eventViewModel.getGoingCountForEachEvent(eventId: self.eventsListViewModel.eventsListViewModel[indexPath.row].event_id!,cell: cell)
-        
-        cell.imgPost.tag = indexPath.row
-        
-        let tapImage = CustomTapGestureRecognizer(target: self, action: #selector(opensingleView(tapGestureRecognizer:)))
-        
-        tapImage.index = indexPath.row
-        
-        
-        cell.imgPost.addGestureRecognizer(tapImage)
-        
-        cell.imgPost.isUserInteractionEnabled = true
-        
-         let tapProfile = CustomTapGestureRecognizer(target: self, action: #selector(openProfile(tapGestureRecognizer:)))
-        
-        tapProfile.index = indexPath.row
-        
-        cell.imgUser.addGestureRecognizer(tapProfile)
-        
-         cell.imgUser.isUserInteractionEnabled = true
-        
-        cell.btnLikeEvent.tag = indexPath.row
-        
-        
-        
-        cell.btnCommentEvent.tag = indexPath.row
-        
-        cell.btnCommentEvent.addTarget(self, action: #selector(comment(sender:)), for: .touchUpInside)
+
         
         return cell
     }
@@ -183,6 +107,10 @@ extension EventPostViewController:UITableViewDelegate,UITableViewDataSource{
         self.present(eVC, animated: true, completion: nil)
         
     }
+    
+    
+    
+    
     @objc func editEvent(sender: UIButton){
         let selectedIndex = sender.tag
         
@@ -202,7 +130,7 @@ extension EventPostViewController:UITableViewDelegate,UITableViewDataSource{
         let pVC :TableViewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileView_SB") as! TableViewController
         pVC.transitioningDelegate = self
         
-       
+        
         
         pVC.eventLViewModel = eventVM
         
@@ -232,6 +160,192 @@ extension EventPostViewController:UITableViewDelegate,UITableViewDataSource{
         
         self.present(alertController, animated: true, completion: nil)
         
+    }
+    @objc func openLocation(sender: UIButton){
+        let selectedIndex = sender.tag
+        
+        let event = self.eventsListViewModel.eventsListViewModel[selectedIndex]
+
+        MapLocation.openMapForPlace(lat: event.event_location.lat!, lng: event.event_location.lng!)
+        
+    }
+    
+    func generateGuestUserEventTableViewcells(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->UITableViewCell {
+        
+        let cell = self.postsTableView.dequeueReusableCell(withIdentifier: "Event", for: indexPath) as! CustomEventPostCellTableViewCell
+        
+        let url = URL(string: "https://i.pinimg.com/originals/c2/f1/06/c2f106c6e9a04467067864f3ee103b7b.jpg")
+        let url2 = URL(string: "https://i.pinimg.com/originals/ec/a8/9a/eca89af3c15d4e1fe509baac34517f25.jpg")
+       
+        cell.imgPost.kf.indicatorType = .activity
+        cell.imgPost.kf.setImage(
+            with: self.eventsListViewModel.eventsListViewModel[indexPath.row].image! == "" ?  url  :     URL(string:self.eventsListViewModel.eventsListViewModel[indexPath.row].image!),
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            
+        }
+        
+        self.profileViewModel.getProfileInfo(userId: self.eventsListViewModel.eventsListViewModel[indexPath.row].userId!, cell: cell)
+        
+        
+        cell.imgUser.layer.cornerRadius = 20
+        
+        cell.btnCommiunity.titleText = self.eventsListViewModel.eventsListViewModel[indexPath.row].datetime!
+        
+        
+        
+        cell.txtEventTime.text = self.eventsListViewModel.eventsListViewModel[indexPath.row].datetime!
+        
+        cell.btnLocation.setTitle(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_location.name!,for: .normal)
+        
+        cell.btnEditEvent.isHidden = true
+        
+        
+        cell.txtEventDesction.text = "\(self.eventsListViewModel.eventsListViewModel[indexPath.row].description!) posted by \(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_name!) @ \(self.eventsListViewModel.eventsListViewModel[indexPath.row].datetime!) # \(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_location!)"
+        
+        
+        
+        
+        self.eventViewModel.getGoingCountForEachEvent(eventId: self.eventsListViewModel.eventsListViewModel[indexPath.row].event_id!,cell: cell)
+        
+        cell.imgPost.tag = indexPath.row
+        
+        let tapImage = CustomTapGestureRecognizer(target: self, action: #selector(opensingleView(tapGestureRecognizer:)))
+        
+        tapImage.index = indexPath.row
+        
+        
+        cell.imgPost.addGestureRecognizer(tapImage)
+        
+        cell.imgPost.isUserInteractionEnabled = true
+        
+        let tapProfile = CustomTapGestureRecognizer(target: self, action: #selector(openProfile(tapGestureRecognizer:)))
+        
+        tapProfile.index = indexPath.row
+        
+        cell.imgUser.addGestureRecognizer(tapProfile)
+        
+        cell.imgUser.isUserInteractionEnabled = true
+        
+        cell.btnLikeEvent.tag = indexPath.row
+        
+        
+        cell.btnLocation.tag = indexPath.row
+        
+        cell.btnLocation.addTarget(self, action: #selector(openLocation(sender:)), for: .touchUpInside)
+        
+        cell.btnLikeEvent.isHidden = true
+        
+        cell.btnShareEvent.isHidden = true
+        
+        cell.btnCommentEvent.isHidden = true
+        
+        cell.btnLikeEvent.isEnabled = false
+        
+        cell.btnShareEvent.isEnabled = false
+        
+        cell.btnCommentEvent.isEnabled = false
+        
+        cell.txtLikeCount.isHidden = true
+        
+        return cell
+        
+    }
+    
+    func generateAuthedUsereEventTableViewCells(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        let cell = self.postsTableView.dequeueReusableCell(withIdentifier: "Event", for: indexPath) as! CustomEventPostCellTableViewCell
+        
+        let url = URL(string: "https://i.pinimg.com/originals/c2/f1/06/c2f106c6e9a04467067864f3ee103b7b.jpg")
+        let url2 = URL(string: "https://i.pinimg.com/originals/ec/a8/9a/eca89af3c15d4e1fe509baac34517f25.jpg")
+        
+        cell.imgPost.kf.indicatorType = .activity
+        cell.imgPost.kf.setImage(
+            with: self.eventsListViewModel.eventsListViewModel[indexPath.row].image! == "" ?  url  :     URL(string:self.eventsListViewModel.eventsListViewModel[indexPath.row].image!),
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            
+        }
+        
+        self.profileViewModel.getProfileInfo(userId: self.eventsListViewModel.eventsListViewModel[indexPath.row].userId!, cell: cell)
+        
+        
+        cell.imgUser.layer.cornerRadius = 20
+        
+        
+        
+        cell.txtEventTime.text = self.eventsListViewModel.eventsListViewModel[indexPath.row].datetime!
+        cell.btnCommiunity.titleText = self.eventsListViewModel.eventsListViewModel[indexPath.row].datetime!
+        
+        cell.btnLocation.setTitle(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_location.name!,for: .normal)
+        
+        if(def.value(forKey: "userID") as! String == self.eventsListViewModel.eventsListViewModel[indexPath.row].userId!) {
+            cell.btnEditEvent.isHidden = false
+            cell.btnEditEvent.isEnabled = true
+            cell.btnEditEvent.tag = indexPath.row
+            
+            cell.btnEditEvent.addTarget(self, action: #selector(editEvent(sender:)), for: .touchUpInside)
+        }else {
+            cell.btnEditEvent.isHidden = true
+            cell.btnEditEvent.isEnabled = false
+        }
+        
+        
+        
+        cell.txtEventDesction.text = "\(self.eventsListViewModel.eventsListViewModel[indexPath.row].description!) posted by \(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_name!) @ \(self.eventsListViewModel.eventsListViewModel[indexPath.row].datetime!) # \(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_location.name!)"
+        
+        
+        self.eventViewModel.checkIfUserGoingToAnEvent(eventId: self.eventsListViewModel.eventsListViewModel[indexPath.row].event_id!, cell: cell)
+        //print(self.eventsListViewModel.eventsListViewModel[indexPath.row].event_id!)
+        
+        
+        self.eventViewModel.getGoingCountForEachEvent(eventId: self.eventsListViewModel.eventsListViewModel[indexPath.row].event_id!,cell: cell)
+        
+        cell.imgPost.tag = indexPath.row
+        
+        let tapImage = CustomTapGestureRecognizer(target: self, action: #selector(opensingleView(tapGestureRecognizer:)))
+        
+        tapImage.index = indexPath.row
+        
+        
+        cell.imgPost.addGestureRecognizer(tapImage)
+        
+        cell.imgPost.isUserInteractionEnabled = true
+        
+        let tapProfile = CustomTapGestureRecognizer(target: self, action: #selector(openProfile(tapGestureRecognizer:)))
+        
+        tapProfile.index = indexPath.row
+        
+        cell.imgUser.addGestureRecognizer(tapProfile)
+        
+        cell.imgUser.isUserInteractionEnabled = true
+        
+        cell.btnLikeEvent.tag = indexPath.row
+        
+        
+        cell.btnLocation.tag = indexPath.row
+        
+        cell.btnLocation.addTarget(self, action: #selector(openLocation(sender:)), for: .touchUpInside)
+        
+        cell.btnCommentEvent.tag = indexPath.row
+        
+        cell.btnCommentEvent.addTarget(self, action: #selector(comment(sender:)), for: .touchUpInside)
+        
+        return cell
     }
 }
 class CustomTapGestureRecognizer: UITapGestureRecognizer {

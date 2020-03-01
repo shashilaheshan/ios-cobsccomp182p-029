@@ -28,14 +28,7 @@ class TableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.UpdateView()
-        
-        //self.txtProfileName.text = eventLViewModel.userId!
-        self.btnUsername.titleText = eventLViewModel.userId!
-        self.profileViewModel.singleProfileViewModelDelegate = self
-        
-        self.profileViewModel.getProfileInfoForSingleUser(userId: eventLViewModel.userId!)
-        self.profileViewModel.getEventsBelongsToSingleUser(userId: eventLViewModel.userId!)
+        self.setupView()
     }
     
 }

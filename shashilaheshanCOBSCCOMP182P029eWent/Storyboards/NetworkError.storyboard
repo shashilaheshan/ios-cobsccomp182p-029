@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Offline View Controller-->
+        <scene sceneID="LrB-Qi-MQo">
+            <objects>
+                <viewController storyboardIdentifier="NetworkError" id="Cad-3s-V3U" customClass="OfflineViewController" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9eO-lt-qjZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHO-Z2-xc8" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="87" y="348" width="240" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="4li-9L-1E5"/>
+                                    <constraint firstAttribute="width" constant="240" id="G64-qs-eHY"/>
+                                    <constraint firstAttribute="height" constant="200" id="Qyv-M7-sab"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="c8J-2a-vht"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network issue .Please connect to internet" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSG-w9-lpe">
+                                <rect key="frame" x="50" y="598" width="314" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="j9w-zj-je1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NSG-w9-lpe" firstAttribute="leading" secondItem="Xd2-ze-VpL" secondAttribute="leading" constant="50" id="9br-Sc-tFw"/>
+                            <constraint firstItem="EHO-Z2-xc8" firstAttribute="centerY" secondItem="9eO-lt-qjZ" secondAttribute="centerY" id="A22-ha-7td"/>
+                            <constraint firstItem="NSG-w9-lpe" firstAttribute="top" secondItem="EHO-Z2-xc8" secondAttribute="bottom" constant="50" id="KyW-IO-ky2"/>
+                            <constraint firstItem="EHO-Z2-xc8" firstAttribute="centerX" secondItem="9eO-lt-qjZ" secondAttribute="centerX" id="Yy0-av-5Od"/>
+                            <constraint firstItem="Xd2-ze-VpL" firstAttribute="trailing" secondItem="NSG-w9-lpe" secondAttribute="trailing" constant="50" id="aWp-wS-NNX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xd2-ze-VpL"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="EHO-Z2-xc8" id="5Gx-AV-A2e"/>
+                        <segue destination="EvD-2E-L7e" kind="show" identifier="MainController" id="2vk-0J-WwC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gbe-IP-Hxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679.71014492753625" y="-156.69642857142856"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="csU-0Q-Caq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="EvD-2E-L7e" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4iR-u1-oQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="-157"/>
+        </scene>
+    </scenes>
+</document>

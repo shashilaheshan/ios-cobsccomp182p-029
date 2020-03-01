@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import RxSwift
+import RxCocoa
 class RegisterVC: UIViewController {
 
     //@IBOutlet weak var registerView: AnimationView!
@@ -26,7 +27,7 @@ class RegisterVC: UIViewController {
     
     @IBOutlet weak var txtBatch: UICustomTextField!
     
-    private var registerViewModel : RegisterViewModel!
+     var registerViewModel : RegisterViewModel = RegisterViewModel()
     
     private let disposeBag  = DisposeBag()
     
@@ -36,21 +37,18 @@ class RegisterVC: UIViewController {
     
     var imagePicker : UIImagePickerController!
     
+    @IBOutlet weak var btnRegister: UiButtonCustom!
+    
+     var keyBOb :KeyboardListeners!
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+         self.keyBOb = KeyboardListeners(view: self)
        // AnimationController.playAnimation(aV: registerView, name: "9710-registration-of-animated-illustrations")
         
-        self.imagePicker = UIImagePickerController()
+        self.setupView()
         
-        self.imagePicker.allowsEditing = true
-        
-       
-        
-        self.imagePicker.delegate = self
-        
-        self.imgProfilePicture.layer.cornerRadius = 10
     }
     
     @IBAction func btnDismiss(_ sender: UIButton) {

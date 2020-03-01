@@ -20,7 +20,7 @@ class RegisterViewModel {
     var fullName :String!
     var password :String!
     var batch :String!
-    var image :UIImage
+    var image :UIImage?
     var image_url :String!
     
     private let authDataService : AuthDataService = AuthDataService()
@@ -30,6 +30,23 @@ class RegisterViewModel {
     private let is_loading = Variable(false)
     var isLoading :Observable<Bool>{
         return is_loading.asObservable()
+    }
+    
+    var emailText = Variable<String>("")
+    var passwordText = Variable<String>("")
+    var nicknameText = Variable<String>("")
+    var fullNameText = Variable<String>("")
+    var commiunityText = Variable<String>("")
+    
+    var isValid :Observable<Bool> {
+        
+        return Observable.combineLatest(emailText.asObservable(),passwordText.asObservable(),nicknameText.asObservable(),fullNameText.asObservable(),commiunityText.asObservable()){ emailT,passwordT,nickName,fullName,cT in
+            emailT.count >= 3 && passwordT.count >= 8 && ValidateFields.isValidEmail(email: emailT) && nickName.count >= 3 && fullName.count >= 3 && cT.count >= 2
+            
+        }
+    }
+    init(){
+        
     }
     
     init(e_mail :String,n_name :String,f_name :String,p_word :String,btch :String, image : UIImage,image_url: String) {

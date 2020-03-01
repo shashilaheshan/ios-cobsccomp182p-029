@@ -7,20 +7,44 @@
 //
 
 import UIKit
+import RxSwift
 
 class GuestureTabBar: UITabBarController {
 
+    var authViewModel = AuthViewModel()
+    let network = NetworkManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-        leftSwipe.direction = .left
-        rightSwipe.direction = .right
-        self.view.addGestureRecognizer(leftSwipe)
-        self.view.addGestureRecognizer(rightSwipe)
+        network.reachability.whenUnreachable = { reachability in
+            self.showOfflinePage()
+        }
+        self.authViewModel.getAuthenticatedUser { (authed) in
+            if(authed){
+               
+                let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipes(_:)))
+                let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipes(_:)))
+                leftSwipe.direction = .left
+                rightSwipe.direction = .right
+                self.view.addGestureRecognizer(leftSwipe)
+                self.view.addGestureRecognizer(rightSwipe)
+            }else{
+              //  print("hooooo")
+                 self.tabBar.isHidden = true
+                
+            }
+            
+        }
        
+       
+    }
+    
+    private func showOfflinePage() -> Void {
+       
+        DispatchQueue.main.async {
+          
+            self.performSegue(withIdentifier: "NetworkUnavailable", sender: self)
+        }
     }
     @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
         if sender.direction == .left {

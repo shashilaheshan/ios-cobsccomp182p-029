@@ -9,10 +9,21 @@
 import Foundation
 import UIKit
 
+class Location{
+    var name:String!
+    var lat :Double!
+    var lng :Double!
+    init(name:String!,lat:Double!,lng:Double!) {
+        self.name = name
+        self.lat = lat
+        self.lng = lng
+    }
+}
+
 class Event {
     
     var event_name :String!
-    var event_location :String!
+    var event_location : Location!
     var description :String!
     var datetime :String!
     var image :UIImage!
@@ -30,7 +41,7 @@ class Event {
         self.imageURL = eVM.imgURL
     
     }
-    init(event: String,e_location : String,desc :String,date_time :String,img :UIImage,eID :String,userId : String,imgurl :String) {
+    init(event: String,e_location : Location,desc :String,date_time :String,img :UIImage,eID :String,userId : String,imgurl :String) {
         self.event_name = event
         self.event_location = e_location
         self.description = desc
@@ -40,7 +51,7 @@ class Event {
         self.userId = userId
         self.imageURL = imgurl
     }
-    init(event: String,e_location : String,desc :String,date_time :String,eID :String,userId : String,imgurl :String) {
+    init(event: String,e_location : Location,desc :String,date_time :String,eID :String,userId : String,imgurl :String) {
         self.event_name = event
         self.event_location = e_location
         self.description = desc

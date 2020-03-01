@@ -40,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Xah-7U-NVA">
-                                        <rect key="frame" x="20" y="124" width="374" height="390"/>
+                                        <rect key="frame" x="20" y="124" width="374" height="305"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwk-eS-akw" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -66,27 +66,54 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-ie-8Rs" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="YZc-Z0-xM4">
                                                 <rect key="frame" x="0.0" y="85" width="374" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
-                                                        <real key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qpy-WF-udY" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="309" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-oE-eNU" customClass="UiButtonCustom" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                                        <rect key="frame" x="344" y="0.0" width="30" height="50"/>
+                                                        <color key="backgroundColor" red="0.78567702839999998" green="0.1329141351" blue="0.99911946060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="4A2-ry-wYF"/>
+                                                        </constraints>
+                                                        <state key="normal" title="+">
+                                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="+"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                                                <color key="value" red="0.53718969350000001" green="0.204596164" blue="0.94963005119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="btnSelectLocation:" destination="dpE-vn-3QY" eventType="touchUpInside" id="EhH-7Q-GSE"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BlW-wV-6BB" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="170" width="374" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,48 +135,12 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date and Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Jx-aF-f2f" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZuW-uL-UwH">
                                                 <rect key="frame" x="0.0" y="255" width="374" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
-                                                        <real key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Image" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gww-sp-bB7" customClass="UICustomTextField" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="340" width="374" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
-                                                        <real key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
+                                                <date key="date" timeIntervalSinceReferenceDate="604753029.91231">
+                                                    <!--2020-03-01 10:57:09 +0000-->
+                                                </date>
+                                            </datePicker>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8r-vK-zbs">
@@ -186,21 +177,46 @@
                                             <action selector="btnEditEvent:" destination="dpE-vn-3QY" eventType="touchUpInside" id="dat-Ah-j0k"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="C8B-FR-edG">
+                                        <rect key="frame" x="20" y="449" width="374" height="200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Failure" translatesAutoresizingMaskIntoConstraints="NO" id="A9k-JI-MDk">
+                                                <rect key="frame" x="0.0" y="0.0" width="239" height="200"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwL-Hx-yMp">
+                                                <rect key="frame" x="274" y="0.0" width="100" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="9jt-pS-IJ3"/>
+                                                </constraints>
+                                                <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <action selector="selectEventImage:" destination="dpE-vn-3QY" eventType="touchUpInside" id="ApE-PX-eQM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="yJx-8g-LIX"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="s8r-vK-zbs" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="0wq-fh-crk"/>
                                     <constraint firstAttribute="trailing" secondItem="KEh-sq-cSy" secondAttribute="trailing" constant="20" id="3ew-P4-yWn"/>
+                                    <constraint firstAttribute="trailing" secondItem="C8B-FR-edG" secondAttribute="trailing" constant="20" id="8CE-JN-H71"/>
+                                    <constraint firstItem="C8B-FR-edG" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="9tL-yA-k56"/>
                                     <constraint firstItem="Rbd-aJ-RJ6" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" id="IgO-SO-izC"/>
                                     <constraint firstItem="KEh-sq-cSy" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="M6w-HA-Cci"/>
                                     <constraint firstAttribute="trailing" secondItem="Rbd-aJ-RJ6" secondAttribute="trailing" id="T9Y-VC-VXe"/>
                                     <constraint firstItem="s8r-vK-zbs" firstAttribute="top" secondItem="veP-fz-TY3" secondAttribute="top" constant="20" id="ZX0-tZ-O73"/>
                                     <constraint firstAttribute="bottom" secondItem="Rbd-aJ-RJ6" secondAttribute="bottom" id="dxw-lZ-wa3"/>
                                     <constraint firstItem="i1F-Xl-F64" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="eWD-3Q-7N9"/>
+                                    <constraint firstItem="C8B-FR-edG" firstAttribute="top" secondItem="Xah-7U-NVA" secondAttribute="bottom" constant="20" id="ffo-cg-P7s"/>
                                     <constraint firstItem="Xah-7U-NVA" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="hQp-kv-YW6"/>
                                     <constraint firstItem="Xah-7U-NVA" firstAttribute="top" secondItem="i1F-Xl-F64" secondAttribute="bottom" constant="30" id="jOo-V0-Gwm"/>
                                     <constraint firstItem="Rbd-aJ-RJ6" firstAttribute="top" secondItem="veP-fz-TY3" secondAttribute="top" id="o8w-pt-IWQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Xah-7U-NVA" secondAttribute="trailing" constant="20" id="rf7-1r-oU6"/>
                                     <constraint firstItem="i1F-Xl-F64" firstAttribute="top" secondItem="s8r-vK-zbs" secondAttribute="bottom" constant="13" id="yAR-7t-MuD"/>
+                                    <constraint firstItem="C8B-FR-edG" firstAttribute="centerX" secondItem="veP-fz-TY3" secondAttribute="centerX" id="zUq-27-VGE"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -217,9 +233,10 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="txtEventDateTime" destination="2Jx-aF-f2f" id="1aF-9j-5ik"/>
-                        <outlet property="txtEventImage" destination="gww-sp-bB7" id="QtP-lA-raM"/>
-                        <outlet property="txtEventLocation" destination="g5Q-ie-8Rs" id="Evp-8B-BWN"/>
+                        <outlet property="btnEditEvent" destination="KEh-sq-cSy" id="v9f-py-3uW"/>
+                        <outlet property="imgEvent" destination="A9k-JI-MDk" id="c8e-hW-nrG"/>
+                        <outlet property="pickerEventDate" destination="ZuW-uL-UwH" id="isF-qc-fsC"/>
+                        <outlet property="txtEventLocation" destination="qpy-WF-udY" id="FAY-Yc-ZAB"/>
                         <outlet property="txtEventName" destination="zwk-eS-akw" id="qDT-Q0-8tw"/>
                         <outlet property="txtEventdescription" destination="BlW-wV-6BB" id="kI5-kU-hbp"/>
                     </connections>
@@ -230,6 +247,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Failure" width="128" height="128"/>
         <image name="close" width="32" height="32"/>
     </resources>
 </document>

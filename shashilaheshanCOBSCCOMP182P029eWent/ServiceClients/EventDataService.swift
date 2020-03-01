@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class EventDataService  {
-     let def = UserDefaults.standard
+    let def = UserDefaults.standard
     
     func saveEventData(event : Event,completion :@escaping (String,Bool)->())  {
         
@@ -21,7 +22,11 @@ class EventDataService  {
             let docId = ref.document().documentID
             Fbc.shared.collection("events").document(docId).setData([
                 "e_name" : event.event_name!,
-                "e_location":event.event_location!,
+                "e_location":[
+                    "name":event.event_location.name!,
+                    "lat":event.event_location.lat!,
+                    "lng":event.event_location.lng!
+                ],
                 "e_desc":event.description!,
                 "e_datetime":event.datetime!,
                 "e_image":event.imageURL!,
@@ -30,6 +35,7 @@ class EventDataService  {
             ]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
+                    
                 } else {
                     DispatchQueue.main.async {
                         completion("Data saved successfully",false)
@@ -37,32 +43,87 @@ class EventDataService  {
                 }
             }
         }
-      
         
-           }
+        
+    }
     
-    func editEventData(event : Event,completion :@escaping (String,Bool)->())  {
+    func updateSingleEvent(event : Event,completion :@escaping (String,Bool)->())  {
         
-        Fbc.shared.collection("events").document(event.eventId!).updateData([
-            "e_name" : event.event_name!,
-            "e_location":event.event_location!,
-            "e_desc":event.description!,
-            "e_datetime":event.datetime!,
-            "e_image":event.image!
-        ]) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-                DispatchQueue.main.async {
-                    completion("Data updated error",false)
+        if(event.image == nil) {
+            Fbc.shared.collection("events").document(event.eventId!).updateData([
+                "e_name" : event.event_name!,
+                "e_location":[
+                    "name":event.event_location.name!,
+                    "lat":event.event_location.lat!,
+                    "lng":event.event_location.lng!
+                ],
+                "e_desc":event.description!,
+                "e_datetime":event.datetime!,
+                
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                        DispatchQueue.main.async {
+                            completion("Data updated error",false)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            completion("Data updated successfully",false)
+                        }
+                    }
+            }
+            
+        }else {
+            
+            Fbc.shared.collection("events").document(event.eventId!).updateData([
+                "e_name" : event.event_name!,
+                "e_location":[
+                    "name":event.event_location.name!,
+                    "lat":event.event_location.lat!,
+                    "lng":event.event_location.lng!
+                ],
+                "e_desc":event.description!,
+                "e_datetime":event.datetime!,
+                "e_image":event.imageURL!
+                
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                    DispatchQueue.main.async {
+                        completion("Data updated error",false)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion("Data updated successfully",false)
+                    }
                 }
-            } else {
+            }
+        }
+        
+    }
+    
+    func updateEventCore(event:Event ,completion:@escaping(Bool)->()){
+        if event.image == nil {
+            self.updateSingleEvent(event: event){ msg,success in
                 DispatchQueue.main.async {
-                    completion("Data updated successfully",false)
+                    completion(success)
+                }
+            }
+        }else {
+            FirebaseStorageService.uploadImages(event.image!, email: "", type: .Event) { (url
+                , Bool) in
+                if url != ""  {
+                    event.imageURL = url
+                }
+                
+                self.updateSingleEvent(event: event){ msg,success in
+                    DispatchQueue.main.async {
+                        completion(success)
+                    }
                 }
             }
         }
     }
-    
     
     func fetchAllEvents(completion :@escaping([Event])->())  {
         Fbc.settings.isPersistenceEnabled = false
@@ -71,48 +132,51 @@ class EventDataService  {
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-              events.removeAll()
+                events.removeAll()
                 for document in querySnapshot!.documents {
-            
-                    events.append(Event(event: document.data()["e_name"] as! String, e_location: document.data()["e_location"] as! String, desc: document.data()["e_desc"] as! String, date_time: document.data()["e_datetime"] as! String, eID :document.documentID ?? "100",userId: document.data()["userId"] as! String,imgurl: document.data()["e_image"] as! String))
-                  
+                    
+                    let dict = document.data()["e_location"] as? [String: AnyObject]
+                    
+                    
+                    events.append(Event(event: document.data()["e_name"] as! String, e_location: Location(name: dict!["name"] as? String, lat: dict!["lat"] as? Double,lng : dict!["lng"] as? Double), desc: document.data()["e_desc"] as! String, date_time: document.data()["e_datetime"] as! String, eID :document.documentID ,userId: document.data()["userId"] as! String,imgurl: document.data()["e_image"] as! String))
+                    
                 }
-               
+                
                 DispatchQueue.main.async {
-                     completion(events)
+                    completion(events)
                 }
                 
             }
         }
     }
-//    func goingNotGoingToSingleEvent(eventId :String,userId :String,completion: @escaping(Bool)->())  {
-//        Fbc.shared.collection("events").document(eventId).collection("likes").addDocument(data: [
-//            "user": userId,
-//            "time" : "\(Date())"
-//
-//        ]) { (Error) in
-//
-//            if (Error == nil) {
-//                completion(true)
-//            }else{
-//                completion(false)
-//            }
-//        }
-//    }
+    //    func goingNotGoingToSingleEvent(eventId :String,userId :String,completion: @escaping(Bool)->())  {
+    //        Fbc.shared.collection("events").document(eventId).collection("likes").addDocument(data: [
+    //            "user": userId,
+    //            "time" : "\(Date())"
+    //
+    //        ]) { (Error) in
+    //
+    //            if (Error == nil) {
+    //                completion(true)
+    //            }else{
+    //                completion(false)
+    //            }
+    //        }
+    //    }
     
     func goingNotGoingToSingleEvent(eventId :String,userId :String,completion: @escaping(Bool)->()){
         Fbc.shared.collection("events").document(eventId).collection("likes").whereField("user", isEqualTo: def.value(forKey: "userID")).getDocuments { (querySnapshot, err
             ) in
             if let err = err {
                 print("Error getting documents: \(err)")
-               // completion(false)
+                // completion(false)
             } else {
                 if(querySnapshot!.documents.count>0) {
                     for document in querySnapshot!.documents {
                         document.reference.delete()
                     }
                     
-                     completion(true)
+                    completion(true)
                 }else{
                     Fbc.shared.collection("events").document(eventId).collection("likes").addDocument(data: [
                         "user": userId,
@@ -122,22 +186,22 @@ class EventDataService  {
                         
                         if (Error == nil) {
                             print("added")
-//                            completion(true)
+                            //                            completion(true)
                         }else{
-                             print("not added")
+                            print("not added")
                             //completion(false)
                         }
                     }
                     
-                     completion(false)
+                    completion(false)
                 }
                 
-               
+                
             }
         }
     }
     func commentToSingleEvent(eventId :String,comment: String)  {
-     
+        
         Fbc.shared.collection("events").document(eventId).collection("comments").addDocument(data: [
             "user": def.value(forKey: "userID") as! String,
             "comment" : comment,
@@ -156,22 +220,22 @@ class EventDataService  {
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-            
+                
                 if(querySnapshot?.documents.count as! Int > 0){
-                   // print("hi you liked")
+                    // print("hi you liked")
                     DispatchQueue.main.async {
                         completion(true)
                     }
                 }else{
                     
-                   // print("hi you dis liked")
+                    // print("hi you dis liked")
                     
                     DispatchQueue.main.async {
                         completion(false)
                     }
                 }
             }
-      }
+        }
     }
     func getGoingCountForEachEvent(eventId : String,completion :@escaping(Int)->()){
         Fbc.shared.collection("events").document(eventId).collection("likes").addSnapshotListener{ (querySnapshot, err) in
@@ -192,7 +256,7 @@ class EventDataService  {
         }
     }
     func getUserProfile(userId : String,completion :@escaping(User)->()){
-         Fbc.settings.isPersistenceEnabled = false
+        Fbc.settings.isPersistenceEnabled = false
         Fbc.shared.collection("users").document(userId).addSnapshotListener{ (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -205,7 +269,7 @@ class EventDataService  {
                     }
                 }else{
                     
-                   
+                    
                 }
             }
         }
@@ -219,10 +283,12 @@ class EventDataService  {
                 print("Error getting documents: \(err)")
             } else {
                 events.removeAll()
-             
+                
                 for document in querySnapshot!.documents {
+                    let dict = document.data()["e_location"] as? [String: AnyObject]
                     
-                    events.append(Event(event: document.data()["e_name"] as! String, e_location: document.data()["e_location"] as! String, desc: document.data()["e_desc"] as! String, date_time: document.data()["e_datetime"] as! String, eID :document.documentID ?? "100",userId: document.data()["userId"] as! String,imgurl: document.data()["e_image"] as! String))
+                    
+                    events.append(Event(event: document.data()["e_name"] as! String, e_location: Location(name: dict!["name"] as? String, lat: dict!["lat"] as? Double,lng : dict!["lng"] as? Double), desc: document.data()["e_desc"] as! String, date_time: document.data()["e_datetime"] as! String, eID :document.documentID ,userId: document.data()["userId"] as! String,imgurl: document.data()["e_image"] as! String))
                     
                 }
                 
@@ -234,4 +300,26 @@ class EventDataService  {
         }
     }
     
+    func fetchAllCommentsBelongsToEvent(eventID :String,completion :@escaping([Comment])->()){
+        Fbc.settings.isPersistenceEnabled = false
+        var comments :[Comment] = [Comment]()
+        Fbc.shared.collection("events").document(eventID).collection("comments").addSnapshotListener { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                comments.removeAll()
+                
+                for document in querySnapshot!.documents {
+                   comments.append(Comment(user: document.data()["user"] as! String, comment:  document.data()["comment"] as! String, time: document.data()["datetime"] as! String))
+                
+                }
+                
+                DispatchQueue.main.async {
+                    completion(comments)
+                }
+                
+            }
+        }
+        
+    }
 }

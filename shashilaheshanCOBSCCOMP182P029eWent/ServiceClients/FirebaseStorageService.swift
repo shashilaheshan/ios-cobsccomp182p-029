@@ -50,6 +50,7 @@ class FirebaseStorageService {
                 if metaData != nil , Error == nil {
                     stRef.downloadURL(completion: { (url, error) in
                         if error != nil {
+                            
                             completion("",false);
                             return
                         } else {
@@ -57,6 +58,7 @@ class FirebaseStorageService {
                         }
                     })
                 }else {
+                   
                     completion("",false);
                 }
             }

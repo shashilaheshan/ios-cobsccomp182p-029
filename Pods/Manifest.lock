@@ -229,6 +229,7 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.3.2)"
   - GoogleUtilities/Reachability (6.3.2):
     - GoogleUtilities/Logger
+  - GPVideoPlayer (1.0.4)
   - "gRPC-C++ (0.0.9)":
     - "gRPC-C++/Implementation (= 0.0.9)"
     - "gRPC-C++/Interface (= 0.0.9)"
@@ -257,16 +258,27 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - ReachabilitySwift (5.0.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
   - RxSwift (5.0.1)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
+  - GPVideoPlayer
   - Kingfisher (~> 5.0)
   - LocationPickerViewController
   - lottie-ios
+  - ReachabilitySwift
+  - RxCocoa
   - RxSwift (~> 5)
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -283,6 +295,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - GPVideoPlayer
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
@@ -291,7 +304,11 @@ SPEC REPOS:
     - LocationPickerViewController
     - lottie-ios
     - nanopb
+    - ReachabilitySwift
+    - RxCocoa
+    - RxRelay
     - RxSwift
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -307,6 +324,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
   GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
+  GPVideoPlayer: fcb68bdba2522f3edd3145b0f1de17423e0b30e1
   "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
@@ -315,8 +333,12 @@ SPEC CHECKSUMS:
   LocationPickerViewController: 4f33d63587bca682267a09779de2b2e09cf5b8e2
   lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: c4f234a4725623542a0366bfc7b8dae22467bf4c
+PODFILE CHECKSUM: 3507f9257d554655ac9a54569325d899bc87e2d1
 
 COCOAPODS: 1.6.1

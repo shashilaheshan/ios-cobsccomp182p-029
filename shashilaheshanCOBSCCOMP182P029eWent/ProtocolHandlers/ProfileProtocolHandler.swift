@@ -8,21 +8,30 @@
 
 import Foundation
 import UIKit
-extension TableViewController : SingleProfileViewModelDelegate  {
+extension TableViewController : SingleProfileViewModelDelegate,SetupViewProtocol  {
+    func setupView() {
+        self.UpdateView()
+        
+        self.btnUsername.titleText = eventLViewModel.userId!
+        self.profileViewModel.singleProfileViewModelDelegate = self
+        
+        self.profileViewModel.getProfileInfoForSingleUser(userId: eventLViewModel.userId!)
+        self.profileViewModel.getEventsBelongsToSingleUser(userId: eventLViewModel.userId!)
+    }
     
     
     func didFinishSingleUserEventsFetch(events: [Event]) {
         self.eventsListViewModel.populateEvents(_events: events)
         
-      
+        
         
         self.singleUserPosts.reloadData()
     }
     
     func didFinishedFetchingProfile(profile: Profile) {
-      
-       imgUser.kf.indicatorType = .activity
-       imgUser.kf.setImage(
+        
+        imgUser.kf.indicatorType = .activity
+        imgUser.kf.setImage(
             with:  URL(string:profile.image!),
             placeholder: UIImage(named: "placeholderImage"),
             options: [
@@ -32,8 +41,8 @@ extension TableViewController : SingleProfileViewModelDelegate  {
             ])
         {
             result in
-           // self.addBlurArea(area: self.view.frame, style: UIBlurEffect.Style.dark)
-
+            // self.addBlurArea(area: self.view.frame, style: UIBlurEffect.Style.dark)
+            
         }
     }
     func addBlurArea(area: CGRect, style: UIBlurEffect.Style) {
@@ -54,7 +63,7 @@ extension TableViewController : SingleProfileViewModelDelegate  {
         tableView.addSubview(Headerview)
         
         NewHeaderLayer = CAShapeLayer()
-       // NewHeaderLayer.fillColor = UIColor(white: 1.0, alpha: 200/180) as! CGColor
+        // NewHeaderLayer.fillColor = UIColor(white: 1.0, alpha: 200/180) as! CGColor
         Headerview.backgroundColor = UIColor(white: 1.0, alpha: 200/180)
         Headerview.layer.mask = NewHeaderLayer
         
@@ -97,7 +106,7 @@ extension TableViewController : SingleProfileViewModelDelegate  {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 272
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.eventsListViewModel.eventsListViewModel.count
     }
@@ -118,7 +127,70 @@ extension TableViewController : SingleProfileViewModelDelegate  {
             result in
             
         }
-     cell.Profileimage.layer.cornerRadius = 20
+        cell.Profileimage.layer.cornerRadius = 20
         return cell
     }
+}
+extension ProfileViewController : SingleProfileViewModelDelegate, ProfileUpdateDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SetupViewProtocol {
+    func setupView() {
+        
+        self.keyBOb.setupKeyboardObservers()
+        
+        self.imagePicker = UIImagePickerController()
+        
+        self.imagePicker.allowsEditing = true
+        
+        
+        self.imagePicker.delegate = self
+        
+        self.profileViewModel.singleProfileViewModelDelegate = self
+        
+        self.profileViewModel.getProfileInfoForSingleUser(userId:self.def.value(forKey: "userID") as! String  )
+    }
+    
+    func didFinishedUpdatedProfile(success: Bool) {
+        print(success)
+    }
+    
+    
+    func didFinishedFetchingProfile(profile: Profile) {
+        self.txtFEmail.text = profile.email!
+        self.txtBatchC.text = profile.commiunity!
+        self.txtFFname.text = profile.f_name
+        self.imgProfile.kf.setImage(
+            with:  URL(string:profile.image!),
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            
+            self.imgProfile.layer.cornerRadius = 10
+            
+        }
+    }
+    
+    func didFinishSingleUserEventsFetch(events: [Event]) {
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.imgProfile.image = pickedImage
+            self.imgProfile.layer.cornerRadius = 10
+            self.is_image_picked = true
+            
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

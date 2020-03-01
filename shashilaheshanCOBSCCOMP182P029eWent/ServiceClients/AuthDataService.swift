@@ -70,7 +70,7 @@ class AuthDataService {
               } else {
                     DispatchQueue.main.async {
                         
-                         UserDefaults.standard.setLoggedIn(value: false)
+                        UserDefaults.standard.setLoggedIn(value: false)
                         
                         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userID.rawValue)
                         
@@ -81,6 +81,20 @@ class AuthDataService {
                     }
               }
        })
+    }
+    func sendForgotPassword(email : String,completion:@escaping(Bool,String)->()){
+        
+        AuthC.shared.sendPasswordReset(withEmail:email) { (Error) in
+            
+            if Error == nil {
+                completion(true,"Email Sent Successfully..Please check provided email address to reset the password")
+            }else {
+                 completion(false,Error?.localizedDescription as! String)
+                
+            }
+        }
+        
+        
     }
     
     

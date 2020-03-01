@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import FirebaseAuth
-
+import LocalAuthentication
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,18 +23,79 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
     
         if (Auth.auth().currentUser != nil  && UserDefaults.standard.isLoggedIn() && UserDefaults.standard.getUserID() != "0") {
-
-            DispatchQueue.main.async {
-
-                self.window?.rootViewController!.performSegue(withIdentifier: "homeView", sender: nil)
-
+            
+            if(self.validBiometrics()){
+                let context = LAContext()
+                var error: NSError?
+                
+                if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                    let reason = "Identify yourself!"
+                    
+                    context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                        [unowned self] success, authenticationError in
+                        
+                        DispatchQueue.main.async {
+                            if success {
+                                DispatchQueue.main.async {
+                                    
+                                    self.window?.rootViewController!.performSegue(withIdentifier: "homeView", sender: nil)
+                                    
+                                }
+                                
+                            } else {
+                                
+                              
+                                
+                                
+                            }
+                        }
+                    }
+                } else {
+                    
+                    
+                    
+                }
+            }else{
+                
+                
             }
+           
 
         }
         
         return true
     }
 
+    func validBiometrics()->Bool {
+        let context : LAContext = LAContext();
+        var error : NSError?
+        
+        context.localizedFallbackTitle = ""
+        context.localizedCancelTitle = "Enter Using Passcode"
+        
+        if (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error))
+        {
+            return true
+        }
+        
+        if error?.code == -8
+        {
+            let reason:String = "TouchID has been locked out due to few fail attemp. Enter iPhone passcode to enable TouchID.";
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication,
+                                   localizedReason: reason,
+                                   reply: { (success, error) in
+                                    
+                                    return false
+                                    
+            })
+            
+            return true
+            
+            
+        }
+        
+        return false
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -58,8 +119,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
-
-    // MARK: - Core Data stack
+    
+  // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
         /*

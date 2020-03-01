@@ -15,19 +15,31 @@ class ForgotPasswordVC: UIViewController {
     
     @IBOutlet weak var txtUsernameToReset: UICustomTextField!
     
+    @IBOutlet weak var btnForgotPassword: UiButtonCustom!
+    
+    var authModel:AuthViewModel = AuthViewModel()
+    
+     var keyBOb :KeyboardListeners!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        AnimationController.playAnimation(aV: aV, name: "1397-animation-for-monobank")
+        
+        self.keyBOb = KeyboardListeners(view: self)
+        
+        self.setupView()
+        
+        
     }
     
 
     @IBAction func btnResetPassword(_ sender: Any) {
-        
-        let alertC = UIAlertController(title: "Email sent..", message: "Your password reset link has been sent..", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alertC.addAction(alertAction)
-        present(alertC, animated: true, completion: nil)
+      
+        self.authModel.forgotPasswordDelegate = self
+        self.authModel.sendForgotPasswordLink(email: txtUsernameToReset.text!)
+    }
+    func navigateToLogin(alert: UIAlertAction!) {
+       self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnDismiss(_ sender: Any) {

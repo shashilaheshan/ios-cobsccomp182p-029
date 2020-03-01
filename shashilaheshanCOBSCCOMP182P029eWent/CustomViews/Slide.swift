@@ -30,11 +30,10 @@ class Slide: UIView {
     }
     //Login page if user preses Let's login button in get starter window
     @IBAction func goToLogin(_ sender: Any) {
-        print(UtilsApp.APP_NAME)
-       
+      
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Auth", bundle: nil)
         
-        let setViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        let setViewController = mainStoryboard.instantiateViewController(withIdentifier: "Login_SB") as! LoginVC
         
         let rootViewController = self.window!.rootViewController
         

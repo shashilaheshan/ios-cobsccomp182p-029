@@ -9,67 +9,72 @@
 import UIKit
 import FirebaseAuth
 import LocalAuthentication
-//import GPVideoPlayer
+import RxSwift
 
 class SettingsViewController: UIViewController {
+    var isDarkMode:Bool = false
     
+    @IBOutlet weak var chkDarkModel: UISwitch!
+    @IBOutlet weak var chkNotifications: UISwitch!
     
-  
+    @IBOutlet weak var txtDarkMode: UILabel!
+    @IBOutlet weak var txtSettingHeading: UILabel!
+    @IBOutlet weak var btnLogout: UiButtonCustom!
+    @IBOutlet weak var txtAppVersion: UILabel!
+    var authViewModel :AuthViewModel = AuthViewModel()
     
+    @IBOutlet weak var txtNotification: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let context = LAContext()
-        var error: NSError?
+        self.chkDarkModel.isOn = false
         
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Identify yourself!"
-            
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-                [unowned self] success, authenticationError in
-                
-                DispatchQueue.main.async {
-                    if success {
-                       // self.runSecretCode()
-                    } else {
-                        let ac = UIAlertController(title: "Authentication failed", message: "Sorry!", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.present(ac, animated: true)
-                    }
-                }
-            }
-        } else {
-            let ac = UIAlertController(title: "Touch ID not available", message: "Your device is not configured for Touch ID.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        }
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        
+        self.txtAppVersion.text = "eWent App Version \(appVersion!)"
+        
+        
     }
+    @IBAction func enableNotifications(_ sender: Any) {
+    }
+    @IBAction func enableDarkMode(_ sender: Any) {
+        self.enableDarkMode()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
+    }
+    
     
     @IBAction func btnLogout(_ sender: Any) {
-        try! Auth.auth().signOut()
-    }
-    func AuthManager(){
-        let context = LAContext()
-        var error: NSError?
         
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Identify yourself!"
-            
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-                [weak self] success, authenticationError in
-                
-                DispatchQueue.main.async {
-                    if success {
-                        print("auth success")
-                        //self?.unlockSecretMessage()
-                    } else {
-                        // error
-                    }
-                }
-            }
-        } else {
-            // no biometry
-        }
+        self.authViewModel.loggedOutDelegate = self
+        
+        self.authViewModel.logOutUser()
     }
     
+    
+    func enableDarkMode(){
+        if(!self.isDarkMode){
+            self.view.layer.backgroundColor = UIColor.black.cgColor
+            self.txtAppVersion.textColor = UIColor.orange
+            self.txtDarkMode.textColor = UIColor.orange
+            self.txtNotification.textColor = UIColor.orange
+            self.txtSettingHeading.textColor = UIColor.orange
+            btnLogout.layer.backgroundColor = UIColor.orange.cgColor
+            self.isDarkMode = true
+        }else{
+            self.view.layer.backgroundColor = UIColor.white.cgColor
+            self.txtAppVersion.textColor = UIColor.black
+            self.txtDarkMode.textColor = UIColor.black
+            self.txtNotification.textColor = UIColor.black
+            self.txtSettingHeading.textColor = UIColor.black
+            btnLogout.layer.backgroundColor = UIColor.purple.cgColor
+             self.isDarkMode = false
+        }
+       
+        
+    }
 }
+

@@ -1,0 +1,6 @@
+framework module Pods_shashilaheshanCOBSCCOMP182P029eWent_shashilaheshanCOBSCCOMP182P029eWentUITests {
+  umbrella header "Pods-shashilaheshanCOBSCCOMP182P029eWent-shashilaheshanCOBSCCOMP182P029eWentUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

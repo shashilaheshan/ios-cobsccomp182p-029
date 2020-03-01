@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-
 import RxSwift
 
 protocol EventViewModelDelegate {
@@ -23,12 +22,12 @@ class EventViewModel {
     
     
     var event_name :String!
-    var event_location :String!
+    var event_location :Location!
     var description :String!
     var datetime :String!
     var image :String!
     var eventId :String!
-    var eventImages : UIImage!
+    var eventImages : UIImage?
     var imgURL :String!
     
     var eventViewModelDelegate : EventViewModelDelegate?
@@ -39,9 +38,22 @@ class EventViewModel {
     var isLoading :Observable<Bool>{
         return is_loading.asObservable()
     }
+    
+    var eventTxt = Variable<String>("")
+
+    var eventDescTxt = Variable<String>("")
+    
+    
+    var isValid :Observable<Bool> {
+        
+        return Observable.combineLatest(eventTxt.asObservable(),eventDescTxt.asObservable()){ eT,eDt in
+            eT.count >= 2  && eDt.count >= 5
+            
+        }
+    }
     init(){}
    
-    init(eventname :String,eventlocaton :String,desc : String,date_time :String ,eID :String,eventImage: UIImage,imgURL:String) {
+    init(eventname :String,eventlocaton :Location,desc : String,date_time :String ,eID :String,eventImage: UIImage?,imgURL:String) {
         self.event_name = eventname
         self.event_location = eventlocaton
         self.description = desc
@@ -69,7 +81,7 @@ class EventViewModel {
     
     func editEventData() {
         self.is_loading.value = true
-        self.eventDataService.editEventData(event: Event(eVM: self)) { data,success  in
+        self.eventDataService.updateEventCore(event: Event(eVM: self)) { success  in
             self.is_loading.value = success
         }
     }
@@ -110,8 +122,6 @@ class EventViewModel {
         }
     }
     
-    
-    
 }
 
 class EventsListViewModel {
@@ -119,9 +129,6 @@ class EventsListViewModel {
     var eventsListViewModel : [EventListViewModel] = [EventListViewModel]()
     var eventDataService : EventDataService = EventDataService()
     
-//    init() {
-//        self.populateEvents()
-//    }
     func populateEvents(_events : [Event])  {
         self.eventsListViewModel = _events.map(EventListViewModel.init)
     }
@@ -132,7 +139,7 @@ class EventsListViewModel {
 class EventListViewModel {
     
     var event_name :String!
-    var event_location :String!
+    var event_location :Location!
     var description :String!
     var datetime :String!
     var image :String!

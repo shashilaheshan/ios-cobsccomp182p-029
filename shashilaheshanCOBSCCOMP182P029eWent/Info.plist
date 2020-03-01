@@ -26,6 +26,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Using your device camera for taking profile images and event images.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>eWent need to authenticate you!!</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is required to get eWent Location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required to get eWent Location.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DidactGothic-Regular.ttf</string>
@@ -34,7 +42,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Auth</string>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -52,11 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSCameraUsageDescription</key>
-    <string>Using your device camera for taking profile images and event images.</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Your location is required to get eWent Location.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Your location is required to get eWent Location.</string>
 </dict>
 </plist>

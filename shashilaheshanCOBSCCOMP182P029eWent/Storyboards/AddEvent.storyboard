@@ -230,6 +230,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="btnAddEvent" destination="90C-iI-i19" id="yer-Ya-2uT"/>
                         <outlet property="eventDesc" destination="SD1-Ep-VpE" id="IBq-JS-evb"/>
                         <outlet property="eventLocation" destination="i9v-6K-CXH" id="yqk-GR-xRT"/>
                         <outlet property="eventName" destination="mcd-6n-9Kt" id="LVz-Mu-Q2B"/>

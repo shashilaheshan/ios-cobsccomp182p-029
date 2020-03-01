@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
-struct Profile {
+class Profile {
     
     var email :String?
     var f_name :String?
     var commiunity :String?
     var image : String?
+    var imageData : UIImage?
     
     init(mail : String,fname :String,batc :String,img :String) {
         
@@ -22,8 +24,12 @@ struct Profile {
         self.commiunity = batc
         self.image = img
     }
-    init() {
-        
+    init(pvm:ProfileViewModel) {
+        self.email = pvm.email
+        self.f_name = pvm.f_name
+        self.commiunity = pvm.batch
+        self.imageData = pvm.image
+       
         
     }
 }

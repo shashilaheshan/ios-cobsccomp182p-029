@@ -51,5 +51,101 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shashilaheshanCOBSCCOMP182P029eWent/ViewModels/Event+ViewModel.swift"
+            timestampString = "604779660.0848089"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "editEventData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shashilaheshanCOBSCCOMP182P029eWent.EventViewModel.editEventData() -&gt; ()"
+                  moduleName = "shashilaheshanCOBSCCOMP182P029eWent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shashilaheshan/Desktop/coventry/EVENT-APP-COURSEWORK/eWent/shashilaheshanCOBSCCOMP182P029eWent/ViewModels/Event+ViewModel.swift"
+                  timestampString = "604752533.974255"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in shashilaheshanCOBSCCOMP182P029eWent.EventViewModel.editEventData() -&gt; ()"
+                  moduleName = "shashilaheshanCOBSCCOMP182P029eWent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shashilaheshan/Desktop/coventry/EVENT-APP-COURSEWORK/eWent/shashilaheshanCOBSCCOMP182P029eWent/ViewModels/Event+ViewModel.swift"
+                  timestampString = "604752533.975893"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shashilaheshanCOBSCCOMP182P029eWent/ViewControllers/EditEventVC/EditEventViewController.swift"
+            timestampString = "604779660.084887"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "btnSelectLocation(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shashilaheshanCOBSCCOMP182P029eWent/ProtocolHandlers/EventProtocolHandler.swift"
+            timestampString = "604779660.084946"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "setupView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shashilaheshanCOBSCCOMP182P029eWentUITests/LoginUITest.swift"
+            timestampString = "604779660.085006"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "testSliderUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

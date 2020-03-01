@@ -40,21 +40,21 @@ public struct UtilsApp {
        {
       "sliders":[
          {
-            "image" : "ic_onboarding_1",
-            "title" :"A real-life bear",
-            "description":"Did you know that Winnie the chubby little cubby was based on a real, young bear in London",
+            "image" : "slider1",
+            "title" :"Post your Events",
+            "description":"You can upload ay nibm events",
             "getstart":"0"
          },
         {
-            "image" : "ic_onboarding_1",
-            "title" :"A real-life bear",
-            "description":"Did you know that Winnie the chubby little cubby was based on a real, young bear in London",
+            "image" : "slider2",
+            "title" :"Post your Events",
+            "description":"You can upload ay nibm events",
             "getstart":"0"
          },
         {
-            "image" : "ic_onboarding_1",
-            "title" :"A real-life bear",
-            "description":"Did you know that Winnie the chubby little cubby was based on a real, young bear in London",
+            "image" : "slider3",
+            "title" :"Post your Events",
+            "description":"You can upload ay nibm events",
             "getstart":"1"
          }
        ]

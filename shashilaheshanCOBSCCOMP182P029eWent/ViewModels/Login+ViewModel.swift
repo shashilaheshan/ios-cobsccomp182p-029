@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import RxSwift
+import RxSwift
 
 protocol LoginViewModelDelegate {
     
@@ -23,13 +23,22 @@ class LoginViewModel {
     
     private let authDataService : AuthDataService = AuthDataService()
     
+    var emailText = Variable<String>("")
+    var passwordText = Variable<String>("")
+    var isValid :Observable<Bool> {
+        
+        return Observable.combineLatest(emailText.asObservable(),passwordText.asObservable()){ emailT,passwordT in
+            emailT.count >= 3 && passwordT.count >= 8 && ValidateFields.isValidEmail(email: emailT)
+            
+        }
+    }
  
     
-    //private let is_loading = Variable(false)
-//    var isLoading :Observable<Bool>{
-//        return is_loading.asObservable()
-//    }
-//
+    private let is_loading = Variable(false)
+    var isLoading :Observable<Bool>{
+        return is_loading.asObservable()
+    }
+
     init(){
         
     }
@@ -41,16 +50,30 @@ class LoginViewModel {
         
     }
     func loginUser()  {
-        //self.is_loading.value = true
-        self.authDataService.loginUser(user: User(lvm: self)) {suceess ,loading  in
-           
-            //self.is_loading.value = loading
-          
-            DispatchQueue.main.async {
-                 self.loginViewModelDelegate?.didLoggedIn(success: suceess)
+        
+        self.is_loading.value = true
+        if(validateLoginCredentials(email: self.email, password:self.password)) {
+            self.authDataService.loginUser(user: User(lvm: self)) {suceess ,loading  in
+                
+                self.is_loading.value = loading
+                
+                DispatchQueue.main.async {
+                    self.loginViewModelDelegate?.didLoggedIn(success: suceess)
+                }
+                
             }
-           
+        }else{
+            self.is_loading.value = false
+            DispatchQueue.main.async {
+                self.loginViewModelDelegate?.didLoggedIn(success: false)
+            }
             
         }
+       
+    }
+    
+    func validateLoginCredentials(email:String,password:String)-> Bool {
+        
+        return password.count >= 8 && ValidateFields.isValidEmail(email: email)
     }
 }

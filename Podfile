@@ -14,6 +14,10 @@ target 'shashilaheshanCOBSCCOMP182P029eWent' do
   pod 'Firebase/Storage'
   pod 'RxSwift', '~> 5'
   pod 'LocationPickerViewController'
+  pod 'RxCocoa'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'ReachabilitySwift'
+  pod 'GPVideoPlayer'
 
   target 'shashilaheshanCOBSCCOMP182P029eWentTests' do
     inherit! :search_paths
@@ -21,7 +25,7 @@ target 'shashilaheshanCOBSCCOMP182P029eWent' do
   end
 
   target 'shashilaheshanCOBSCCOMP182P029eWentUITests' do
-    inherit! :search_paths
+    #inherit! :search_paths
     # Pods for testing
   end
 

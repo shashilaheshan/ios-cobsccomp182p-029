@@ -42,10 +42,20 @@
                     <connections>
                         <outlet property="pageControl" destination="w6u-u7-XJW" id="cFV-ar-bID"/>
                         <outlet property="scollView" destination="iP7-zV-hch" id="UTA-EP-R9G"/>
+                        <segue destination="WFc-Wp-ybW" kind="show" identifier="homeView" id="6gZ-Jg-Yxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="96" y="85"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="PXP-9V-V7B">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="WFc-Wp-ybW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULA-Vs-exw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1230" y="-55"/>
         </scene>
     </scenes>
 </document>
