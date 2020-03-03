@@ -16,7 +16,7 @@ class LoginTest: XCTestCase {
     var authDataService  :AuthDataService!
     //dummy user credentials
     var email:String = "ebayshashila@gmail.com"
-    var password:String = "12345678"
+    var password:String = "1234567"
 
     override func setUp() {
        self.loginviewModel = LoginViewModel()

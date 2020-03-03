@@ -78,21 +78,7 @@ extension EventPostViewController : EventViewModelDelegate,ProfileViewModelDeleg
         }
         
     }
-    //    @objc func addNotGoing(sender: UIButton){
-    //        let selectedIndex = sender.tag
-    //
-    //        let eventId = self.eventsListViewModel.eventsListViewModel[selectedIndex].event_id!
-    //        let userID = self.eventsListViewModel.eventsListViewModel[selectedIndex].userId!
-    //      // print("not-going")
-    //        self.eventViewModel.notGoingSingleEvent(eventId: eventId,userId: userID){ success in
-    //            if(success) {
-    //                //print(success)
-    //            }
-    //
-    //        }
-    //
-    //    }
-    
+
     @objc func goingNotGoingToSingleEvent(sender: UIButton){
         let selectedIndex = sender.tag
         
@@ -193,29 +179,6 @@ extension EditEventViewController :UIImagePickerControllerDelegate,UINavigationC
         
         self.keyBOb.setupKeyboardObservers()
         
-//        _ = txtEventName.rx.text.map {$0 ?? ""}.bind(to: self.eventViewModel.eventTxt)
-//        _ = txtEventLocation.rx.text.map {$0 ?? ""}.bind(to: self.eventViewModel.locationTxt)
-//        _ = txtEventdescription.rx.text.map {$0 ?? ""}.bind(to: self.eventViewModel.eventDescTxt)
-//
-//
-//        _ = self.eventViewModel.isValid.bind(to: self.btnEditEvent.rx.isEnabled)
-//
-//        self.eventViewModel.isValid.subscribe(onNext : { isValid in
-//            if(isValid) {
-//                UIView.animate(withDuration: 1.0) {
-//                    self.btnEditEvent.layer.backgroundColor =  UIColor.black.cgColor
-//
-//                }
-//
-//            }else{
-//                UIView.animate(withDuration: 1.0) {
-//                    self.btnEditEvent.layer.backgroundColor =  UIColor.red.cgColor
-//
-//                }
-//            }
-//
-//
-//        })
         
         txtEventName.text = self.eventLViewModel.event_name!
         

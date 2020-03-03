@@ -27,22 +27,23 @@ class LoginUITest: XCTestCase {
 
         func testLoginUI() {
             let app = XCUIApplication()
-            let elementsQuery = XCUIApplication().scrollViews.otherElements
-            let postYourEventsStaticText = elementsQuery.staticTexts["Post your Events"]
-            postYourEventsStaticText.swipeLeft()
-            postYourEventsStaticText.swipeLeft()
+
+            let scrollViewsQuery = XCUIApplication().scrollViews
+            let elementsQuery = scrollViewsQuery.otherElements
+            let youCanUploadAyNibmEventsStaticText = elementsQuery.staticTexts["You can upload ay nibm events"]
+            youCanUploadAyNibmEventsStaticText.swipeLeft()
+            youCanUploadAyNibmEventsStaticText.swipeLeft()
+            scrollViewsQuery.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 1).swipeLeft()
             elementsQuery.buttons["Let's Login"].tap()
             elementsQuery.textFields["Username"].tap()
-        
             app.typeText("ebayshashila@gmail.com")
             
             let passwordSecureTextField = elementsQuery.secureTextFields["Password"]
             passwordSecureTextField.tap()
-            elementsQuery.buttons["Login"].tap()
             passwordSecureTextField.tap()
+            app.typeText("12345678")
+            elementsQuery.buttons["Login"].tap()
             
-            
-    
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         

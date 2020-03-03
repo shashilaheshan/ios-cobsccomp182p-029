@@ -7,10 +7,10 @@
 //
 
 import Foundation
-
-import LocalAuthentication
 import UIKit
 import RxSwift
+import LocalAuthentication
+
 protocol AuthViewModeDelegate {
     func didAuthenticated(success: Bool)
 }
@@ -41,39 +41,9 @@ class AuthViewModel {
     }
     
     
-    fileprivate func isBiometryReady() -> Bool
-    {
-        let context : LAContext = LAContext();
-        var error : NSError?
-        
-        context.localizedFallbackTitle = ""
-        context.localizedCancelTitle = "Enter Using Passcode"
-        
-        if (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error))
-        {
-            return true
-        }
-        
-        if error?.code == -8
-        {
-            let reason:String = "TouchID has been locked out due to few fail attemp. Enter iPhone passcode to enable TouchID.";
-            context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication,
-                                   localizedReason: reason,
-                                   reply: { (success, error) in
-                                    
-                                    return false
-                                    
-            })
-            
-            return true
-            
-            
-        }
-        
-        return false
-    }
+    
     func authenticateUser(){
-        if(isBiometryReady()){
+        if(AuthValidator.isBiometryReady()){
             
             self.authModelDelegate?.didAuthenticated(success: true)
             

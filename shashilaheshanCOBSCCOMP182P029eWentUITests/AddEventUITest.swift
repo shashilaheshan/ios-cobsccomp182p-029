@@ -35,11 +35,12 @@ class AddEventUITest: XCTestCase {
         scrollViewsQuery.children(matching: .other).element.children(matching: .other).element/*@START_MENU_TOKEN@*/.swipeLeft()/*[[".swipeDown()",".swipeLeft()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         elementsQuery.buttons["Let's Login"].tap()
         elementsQuery.textFields["Username"].tap()
+        app.typeText("ebayshashila@gmail.com")
         
         let passwordSecureTextField = elementsQuery.secureTextFields["Password"]
         passwordSecureTextField.tap()
+        app.typeText("12345678")
         elementsQuery.buttons["Login"].tap()
-        passwordSecureTextField.tap()
         app.buttons["+"].tap()
         elementsQuery.textFields["Event Name"].tap()
         scrollViewsQuery.otherElements.containing(.textField, identifier:"Event Name").element.swipeDown()
@@ -52,6 +53,7 @@ class AddEventUITest: XCTestCase {
         
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
     }
 
 }

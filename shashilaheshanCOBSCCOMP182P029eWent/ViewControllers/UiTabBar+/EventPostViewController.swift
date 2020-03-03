@@ -23,6 +23,9 @@ class EventPostViewController: UIViewController,UIViewControllerTransitioningDel
     var eventsListViewModel : EventsListViewModel = EventsListViewModel()
     
     @IBOutlet weak var btnAddEvent: UiButtonCustom!
+    
+    @IBOutlet weak var btnLoginForGuestUser: UiButtonCustom!
+    
     var eventDataService : EventDataService = EventDataService()
     
     var profileViewModel : ProfileViewModel =  ProfileViewModel()
@@ -39,6 +42,9 @@ class EventPostViewController: UIViewController,UIViewControllerTransitioningDel
     @IBAction func btnAddPostFab(_ sender: Any) {
         
         
+    }
+    @IBAction func btnLoginGuest(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
@@ -76,6 +82,18 @@ extension EventPostViewController:UITableViewDelegate,UITableViewDataSource{
         return 450
     }
     
+    fileprivate func hideAuthButtonForAuthUser(authed: Bool) {
+        if (authed) {
+            
+            self.btnLoginForGuestUser.isEnabled = false
+            self.btnLoginForGuestUser.isHidden = true
+        } else{
+            self.btnLoginForGuestUser.isEnabled = true
+            self.btnLoginForGuestUser.isHidden = false
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
        
@@ -83,9 +101,10 @@ extension EventPostViewController:UITableViewDelegate,UITableViewDataSource{
         
       
         if(self.authedUser){
+            hideAuthButtonForAuthUser(authed:true)
             cell =  self.generateAuthedUsereEventTableViewCells(tableView, cellForRowAt:indexPath )
         }else{
-
+            hideAuthButtonForAuthUser(authed:false)
             cell =  self.generateGuestUserEventTableViewcells(tableView, cellForRowAt:indexPath )
 
         }

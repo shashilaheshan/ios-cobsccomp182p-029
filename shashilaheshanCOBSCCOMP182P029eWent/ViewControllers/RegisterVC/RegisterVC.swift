@@ -71,21 +71,28 @@ class RegisterVC: UIViewController {
        
     }
     @IBAction func btnRegisterUser(_ sender: Any) {
-        let alert = ShowAlert.showAlertMessage(title: "Please wait", message: "Registering User...", type: .Waiting, vc: self)
-
-        self.registerViewModel = RegisterViewModel(e_mail: txtEmail.text!, n_name: txtNickName.text!, f_name:txtFName.text! , p_word: txtPassword.text!, btch: txtBatch.text!,image: self.imgProfilePicture.image!,image_url: "")
         
-        self.registerViewModel.isLoading.subscribe(onNext: {
-            [weak self] loading in
-
-            if(loading){
-                alert.show();
-            }else {
-                alert.dismiss(withClickedButtonIndex: 0, animated: true)
-
-            }
-        }).disposed(by: disposeBag)
-        self.registerViewModel.registerUser()
+        if self.imgProfilePicture.image?.imageAsset != nil {
+            let alert = ShowAlert.showAlertMessage(title: "Please wait", message: "Registering User...", type: .Loading, vc: self)
+            
+            self.registerViewModel = RegisterViewModel(e_mail: txtEmail.text!, n_name: txtNickName.text!, f_name:txtFName.text! , p_word: txtPassword.text!, btch: txtBatch.text!,image: self.imgProfilePicture.image!,image_url: "")
+            
+            self.registerViewModel.isLoading.subscribe(onNext: {
+                [weak self] loading in
+                
+                if(loading){
+                    alert.show();
+                }else {
+                    alert.dismiss(withClickedButtonIndex: 0, animated: true)
+                    
+                }
+            }).disposed(by: disposeBag)
+            self.registerViewModel.registerUser()
+        }else{
+               let alert = ShowAlert.showAlertMessage(title: "Error", message: "Please select profile image..", type: .Error, vc: self)
+               alert.show()
+        }
+        
     }
     
     @IBAction func btnGuestLogin(_ sender: Any) {

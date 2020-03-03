@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-import GPVideoPlayer
+//import GPVideoPlayer
 
 class VideoViewController: UIViewController {
    
@@ -33,20 +33,20 @@ extension VideoViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: VideoCell = self.tblVidel.dequeueReusableCell(withIdentifier: "video", for: indexPath) as! VideoCell
-        if let player = GPVideoPlayer.initialize(with: cell.playerSubView.bounds) {
-            player.isToShowPlaybackControls = true
-            
-            cell.playerSubView.addSubview(player)
-            
-            let url1 = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")!
-            //let videoFilePath = Bundle.main.path(forResource: "video", ofType: "mp4")
-            //let url2 = URL(fileURLWithPath: videoFilePath!)
-            
-            player.loadVideos(with: [url1])
-            player.isToShowPlaybackControls = true
-            player.isMuted = true
-            player.playVideo()
-        }
+//        if let player = GPVideoPlayer.initialize(with: cell.playerSubView.bounds) {
+//            player.isToShowPlaybackControls = true
+//
+//            cell.playerSubView.addSubview(player)
+//
+//            let url1 = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")!
+//            //let videoFilePath = Bundle.main.path(forResource: "video", ofType: "mp4")
+//            //let url2 = URL(fileURLWithPath: videoFilePath!)
+//
+//            player.loadVideos(with: [url1])
+//            player.isToShowPlaybackControls = true
+//            player.isMuted = true
+//            player.playVideo()
+//        }
         
         return cell
     }

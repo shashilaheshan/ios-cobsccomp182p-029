@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
     
         if (Auth.auth().currentUser != nil  && UserDefaults.standard.isLoggedIn() && UserDefaults.standard.getUserID() != "0") {
-            
-            if(self.validBiometrics()){
+            //here we cheching when user opening app again cheking user maching using biometrics touch id or face id
+            if(AuthValidator.isBiometryReady()){
                 let context = LAContext()
                 var error: NSError?
                 
@@ -44,58 +44,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 
                             } else {
                                 
-                              
-                                
-                                
                             }
                         }
                     }
                 } else {
                     
                     
-                    
                 }
             }else{
                 
-                
             }
-           
 
         }
         
         return true
     }
 
-    func validBiometrics()->Bool {
-        let context : LAContext = LAContext();
-        var error : NSError?
-        
-        context.localizedFallbackTitle = ""
-        context.localizedCancelTitle = "Enter Using Passcode"
-        
-        if (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error))
-        {
-            return true
-        }
-        
-        if error?.code == -8
-        {
-            let reason:String = "TouchID has been locked out due to few fail attemp. Enter iPhone passcode to enable TouchID.";
-            context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication,
-                                   localizedReason: reason,
-                                   reply: { (success, error) in
-                                    
-                                    return false
-                                    
-            })
-            
-            return true
-            
-            
-        }
-        
-        return false
-    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

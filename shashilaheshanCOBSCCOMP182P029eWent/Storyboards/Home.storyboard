@@ -260,10 +260,36 @@
                                     <segue destination="caz-49-lRB" kind="presentation" id="Vl8-gs-dQZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4C-nM-WAU" customClass="UiButtonCustom" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
+                                <rect key="frame" x="15" y="733" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.78567702839999998" green="0.1329141351" blue="0.99911946060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zgg-ra-eTs"/>
+                                    <constraint firstAttribute="width" constant="80" id="sqC-uz-hap"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadow">
+                                        <color key="value" red="0.8315488559965839" green="0.21542870376727416" blue="0.99911946060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnAddPostFab:" destination="CKV-mt-oHU" eventType="touchUpInside" id="3Wf-ZM-I19"/>
+                                    <action selector="btnLoginGuest:" destination="CKV-mt-oHU" eventType="touchUpInside" id="meP-CW-MbO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="z4C-nM-WAU" firstAttribute="leading" secondItem="fz8-Qw-s07" secondAttribute="leading" constant="15" id="12m-Tt-KG2"/>
                             <constraint firstItem="fz8-Qw-s07" firstAttribute="trailing" secondItem="sEJ-74-86n" secondAttribute="trailing" constant="20" id="C1V-X7-iAj"/>
+                            <constraint firstItem="fz8-Qw-s07" firstAttribute="bottom" secondItem="z4C-nM-WAU" secondAttribute="bottom" constant="50" id="hgX-id-GRw"/>
                             <constraint firstItem="SbX-LN-zmh" firstAttribute="top" secondItem="fz8-Qw-s07" secondAttribute="top" id="hpZ-EP-NwV"/>
                             <constraint firstItem="SbX-LN-zmh" firstAttribute="leading" secondItem="fz8-Qw-s07" secondAttribute="leading" id="moK-WK-O9x"/>
                             <constraint firstItem="fz8-Qw-s07" firstAttribute="bottom" secondItem="sEJ-74-86n" secondAttribute="bottom" constant="50" id="qlQ-uH-sKo"/>
@@ -284,6 +310,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnAddEvent" destination="sEJ-74-86n" id="5Eg-AJ-jma"/>
+                        <outlet property="btnLoginForGuestUser" destination="z4C-nM-WAU" id="Bqp-Pm-KYp"/>
                         <outlet property="postsTableView" destination="SbX-LN-zmh" id="tyd-zN-1kJ"/>
                         <segue destination="oID-wj-Vmo" kind="presentation" identifier="NetworkUnavailable" id="GOT-AY-jTI"/>
                     </connections>
@@ -744,6 +771,6 @@
         <image name="video" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eVE-0D-Ls4"/>
+        <segue reference="GOT-AY-jTI"/>
     </inferredMetricsTieBreakers>
 </document>

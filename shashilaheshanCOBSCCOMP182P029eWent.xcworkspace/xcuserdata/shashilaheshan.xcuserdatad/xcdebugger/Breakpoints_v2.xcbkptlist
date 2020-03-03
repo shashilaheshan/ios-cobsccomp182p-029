@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shashilaheshanCOBSCCOMP182P029eWent/ProtocolHandlers/EventProtocolHandler.swift"
-            timestampString = "604780630.8013591"
+            timestampString = "604947077.627561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "setupView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shashilaheshanCOBSCCOMP182P029eWentUITests/LoginUITest.swift"
-            timestampString = "604780630.8014621"
+            timestampString = "604947077.627638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "testSliderUI()"
             landmarkType = "7">
          </BreakpointContent>

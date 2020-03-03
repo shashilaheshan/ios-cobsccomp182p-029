@@ -17,7 +17,7 @@ target 'shashilaheshanCOBSCCOMP182P029eWent' do
   pod 'RxCocoa'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'ReachabilitySwift'
-  pod 'GPVideoPlayer'
+  #pod 'GPVideoPlayer'
 
   target 'shashilaheshanCOBSCCOMP182P029eWentTests' do
     inherit! :search_paths

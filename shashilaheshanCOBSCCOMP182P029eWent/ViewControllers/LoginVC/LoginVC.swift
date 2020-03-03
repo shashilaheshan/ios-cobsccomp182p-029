@@ -22,7 +22,7 @@ class LoginVC: UIViewController , UIViewControllerTransitioningDelegate,UITextVi
     
     @IBOutlet weak var txtUsername: UITextField!
     
-    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtPassword: UICustomPasswordTextField!
     
     @IBOutlet weak var btnLogin: UIButton!
     

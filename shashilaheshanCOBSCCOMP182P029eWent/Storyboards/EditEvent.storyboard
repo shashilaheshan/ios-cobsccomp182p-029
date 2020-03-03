@@ -154,6 +154,27 @@
                                             <action selector="btnClose:" destination="dpE-vn-3QY" eventType="touchUpInside" id="d8N-WI-wME"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="C8B-FR-edG">
+                                        <rect key="frame" x="20" y="449" width="374" height="200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Failure" translatesAutoresizingMaskIntoConstraints="NO" id="A9k-JI-MDk">
+                                                <rect key="frame" x="0.0" y="0.0" width="239" height="200"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwL-Hx-yMp">
+                                                <rect key="frame" x="274" y="0.0" width="100" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="9jt-pS-IJ3"/>
+                                                </constraints>
+                                                <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <action selector="selectEventImage:" destination="dpE-vn-3QY" eventType="touchUpInside" id="ApE-PX-eQM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="yJx-8g-LIX"/>
+                                        </constraints>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEh-sq-cSy" customClass="UiButtonCustom" customModule="shashilaheshanCOBSCCOMP182P029eWent" customModuleProvider="target">
                                         <rect key="frame" x="20" y="850" width="374" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,27 +198,6 @@
                                             <action selector="btnEditEvent:" destination="dpE-vn-3QY" eventType="touchUpInside" id="dat-Ah-j0k"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="C8B-FR-edG">
-                                        <rect key="frame" x="20" y="449" width="374" height="200"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Failure" translatesAutoresizingMaskIntoConstraints="NO" id="A9k-JI-MDk">
-                                                <rect key="frame" x="0.0" y="0.0" width="239" height="200"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwL-Hx-yMp">
-                                                <rect key="frame" x="274" y="0.0" width="100" height="200"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="9jt-pS-IJ3"/>
-                                                </constraints>
-                                                <state key="normal" title="Select"/>
-                                                <connections>
-                                                    <action selector="selectEventImage:" destination="dpE-vn-3QY" eventType="touchUpInside" id="ApE-PX-eQM"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="yJx-8g-LIX"/>
-                                        </constraints>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="s8r-vK-zbs" firstAttribute="leading" secondItem="veP-fz-TY3" secondAttribute="leading" constant="20" id="0wq-fh-crk"/>

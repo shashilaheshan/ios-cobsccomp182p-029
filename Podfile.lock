@@ -229,7 +229,6 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.3.2)"
   - GoogleUtilities/Reachability (6.3.2):
     - GoogleUtilities/Logger
-  - GPVideoPlayer (1.0.4)
   - "gRPC-C++ (0.0.9)":
     - "gRPC-C++/Implementation (= 0.0.9)"
     - "gRPC-C++/Interface (= 0.0.9)"
@@ -271,7 +270,6 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
-  - GPVideoPlayer
   - Kingfisher (~> 5.0)
   - LocationPickerViewController
   - lottie-ios
@@ -295,7 +293,6 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
-    - GPVideoPlayer
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
@@ -324,7 +321,6 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
   GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
-  GPVideoPlayer: fcb68bdba2522f3edd3145b0f1de17423e0b30e1
   "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
@@ -339,6 +335,6 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 3507f9257d554655ac9a54569325d899bc87e2d1
+PODFILE CHECKSUM: 04117394a1ee88951af828b2e421f01c71bcc5ec
 
 COCOAPODS: 1.6.1

@@ -58,9 +58,11 @@ extension RegisterVC : RegisterViewModelDelegate,UIImagePickerControllerDelegate
     func didUserRegistered(success: Bool) {
         
         if success {
-            self.dismiss(animated: true, completion: nil)
-        }else{
             
+             self.performSegue(withIdentifier: "homeView", sender: nil)
+            
+        }else{
+             ShowAlert.showAlertMessage(title: "Error", message: "Something went wrong please try again.", type: .Error, vc: self).show()
         }
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
